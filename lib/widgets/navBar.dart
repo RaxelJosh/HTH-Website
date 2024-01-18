@@ -67,6 +67,7 @@ Widget navLogo() {
   return Container(
     width: 110,
     decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(logo), fit: BoxFit.contain)),
+        image: DecorationImage( image: AssetImage(logo), fit: BoxFit.contain)
+    ),
   );
 }

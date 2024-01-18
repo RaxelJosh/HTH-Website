@@ -4,7 +4,7 @@ import 'package:xpense_flutter_web/utils/constants.dart';
 
 Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
   return Container(
-    color: Colors.white,
+    color: Colors.blueGrey,
     padding: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 30),
     child: Row(
       children: [
@@ -49,7 +49,7 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
               s3,
               textAlign: imageLeft ? TextAlign.right : TextAlign.left,
               style: TextStyle(
-                color: Colors.grey.shade500,
+                color: Colors.grey.shade400,
                 fontSize: 16,
               ),
             ),
@@ -86,6 +86,7 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
 
 Widget CommonContainerMobile(String s1, s2, s3, image, bool imageLeft) {
   return Container(
+    color: Colors.blueGrey,
     padding: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 30),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -133,17 +134,17 @@ Widget CommonContainerMobile(String s1, s2, s3, image, bool imageLeft) {
         SizedBox(
           height: 20,
         ),
-        TextButton.icon(
-            onPressed: () {},
-            icon: Icon(
-              Icons.arrow_forward_ios,
-              size: 20,
-              color: AppColors.primary,
-            ),
-            label: Text(
-              'Learn more',
-              style: TextStyle(color: AppColors.primary),
-            )),
+        // TextButton.icon(
+        //     onPressed: () {},
+        //     icon: Icon(
+        //       Icons.arrow_forward_ios,
+        //       size: 20,
+        //       color: AppColors.primary,
+        //     ),
+        //     label: Text(
+        //       'Learn more',
+        //       style: TextStyle(color: AppColors.primary),
+        //     )),
       ],
     ),
   );

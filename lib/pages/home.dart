@@ -8,6 +8,8 @@ import 'package:xpense_flutter_web/pages/containers/container5.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
 import 'package:xpense_flutter_web/widgets/navBar.dart';
 
+import 'containers/container6.dart';
+
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
@@ -27,14 +29,14 @@ class _HomeState extends State<Home> {
           children: [
             NavBar(),
             SizedBox(
-              height: 100,
+              height: 5,
             ),
             Container1(),
             Container2(),
             Container3(),
             Container4(),
-            Container5()
-
+            Container5(),
+            Container6(),
             // MainContent()
           ],
         ),

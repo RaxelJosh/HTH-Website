@@ -36,20 +36,20 @@ class _Container2State extends State<Container2> {
                       image: AssetImage(dashboard), fit: BoxFit.contain)),
             ),
           ),
-          Container(
-            width: double.infinity,
-            color: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 40),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                companyLogo(fb),
-                companyLogo(google),
-                companyLogo(cocacola),
-                companyLogo(samsung)
-              ],
-            ),
-          )
+          // Container(
+          //   width: double.infinity,
+          //   color: Colors.white,
+          //   padding: EdgeInsets.symmetric(vertical: 40),
+          //   child: Column(
+          //     // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //     children: [
+          //       companyLogo(fb),
+          //       companyLogo(google),
+          //       companyLogo(cocacola),
+          //       companyLogo(samsung)
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
@@ -91,42 +91,42 @@ class _Container2State extends State<Container2> {
               Positioned(
                 left: 43,
                 right: 43,
-                bottom: 0,
+                bottom: 100,
                 child: Container(
                   width: double.infinity,
                   height: 712,
                   decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage(dashboard))),
+                      image: DecorationImage(image: AssetImage(dashboard),)),
                 ),
               )
             ],
           )),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.symmetric(vertical: 40),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                companyLogo(fb),
-                companyLogo(google),
-                companyLogo(cocacola),
-                companyLogo(samsung)
-              ],
-            ),
-          )
+          // Container(
+          //   color: Colors.white,
+          //   padding: EdgeInsets.symmetric(vertical: 40),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //     children: [
+          //       companyLogo(fb),
+          //       companyLogo(google),
+          //       companyLogo(cocacola),
+          //       companyLogo(samsung)
+          //     ],
+          //   ),
+          // )
         ],
       ),
     );
   }
 
-  Widget companyLogo(String image) {
-    return Container(
-      width: 160,
-      height: 36,
-      margin: EdgeInsets.only(bottom: 20),
-      decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
-      ),
-    );
-  }
+  // Widget companyLogo(String image) {
+  //   return Container(
+  //     width: 160,
+  //     height: 36,
+  //     margin: EdgeInsets.only(bottom: 20),
+  //     decoration: BoxDecoration(
+  //       image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
+  //     ),
+  //   );
+  // }
 }

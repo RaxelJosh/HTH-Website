@@ -23,10 +23,12 @@ class _Container4State extends State<Container4> {
   //================ MOBILE ===============
 
   Widget MobileContainer4() {
+    color: Colors.cyanAccent;
     return CommonContainerMobile(
-        'FREE SOME COST',
-        'Save cost \nfor you \nand family',
-        'Tellus lacus morbi sagittis lacus in. Amet nisl at mauris enim accumsan nisi, tincidunt vel. Enim ipsum, amet quis ullamcorper eget ut.',
+        'Services Offered',
+        'HealthCare Comfort \nDelivered \nAt Your Home',
+        'Our Team of Professionals are specially \ntrained and experienced in providing Medical Services, Medication Services,'
+            'Post Operative Care, Venipuncture, Wound Care, Comprehensive Rehabilitative Care and many more.',
         illustration2,
         true);
   }
@@ -35,9 +37,10 @@ class _Container4State extends State<Container4> {
 
   Widget DesktopContainer4() {
     return CommonContainer(
-        'FREE SOME COST',
-        'Save cost \nfor you \nand family',
-        'Tellus lacus morbi sagittis lacus in. Amet nisl at \nmauris enim accumsan nisi, tincidunt vel. \nEnim ipsum, amet quis ullamcorper eget ut.',
+        'Services Offered',
+        'HealthCare Comfort \nDelivered \nAt Your Home',
+        'Our Team of Professionals are specially trained and experienced in providing Medical Services, Medication Services,'
+            'Post Operative Care, Venipuncture, Wound Care, Comprehensive Rehabilitative Care and many more.',
         illustration2,
         true);
   }
