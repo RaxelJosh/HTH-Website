@@ -23,9 +23,8 @@ class _NavBarState extends State<NavBar> {
 
 Widget MobileNavBar() {
   return Container(
-    margin: EdgeInsets.symmetric(horizontal: 20),
+    margin: EdgeInsets.symmetric(horizontal: 15),
     height: 70,
-    width: 70,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [Icon(Icons.menu), navLogo()],
@@ -43,11 +42,11 @@ Widget DeskTopNavBar() {
         navLogo(),
         Row(
           children: [
-            navButton('Features'),
             navButton('About Us'),
-            navButton('Pricing'),
-            navButton('Feedback'),
-            navButton('Service Offered')
+            navButton('Services Offered'),
+            navButton('Service Area'),
+            navButton('Employment'),
+            navButton('Contact Us')
           ],
         ),
       ],
