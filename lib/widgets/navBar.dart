@@ -35,7 +35,7 @@ Widget MobileNavBar() {
 Widget DeskTopNavBar() {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-    height: 70,
+    height: 100,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
