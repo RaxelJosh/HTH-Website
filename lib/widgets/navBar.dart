@@ -25,6 +25,7 @@ Widget MobileNavBar() {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 20),
     height: 70,
+    width: 70,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [Icon(Icons.menu), navLogo()],
@@ -65,9 +66,10 @@ Widget navButton(String text) {
 
 Widget navLogo() {
   return Container(
-    width: 110,
+    width: 300,
+    height: 500,
     decoration: BoxDecoration(
-        image: DecorationImage( image: AssetImage(logo), fit: BoxFit.contain)
+        image: DecorationImage( image: AssetImage(logo), fit: BoxFit.cover)
     ),
   );
 }

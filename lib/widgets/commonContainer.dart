@@ -4,8 +4,10 @@ import 'package:xpense_flutter_web/utils/constants.dart';
 
 Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
   return Container(
-    color: Colors.blueGrey,
     padding: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 30),
+    decoration: BoxDecoration(
+      color: imageLeft ? Colors.blueGrey : Colors.white, // Change background color based on imageLeft
+    ),
     child: Row(
       children: [
         imageLeft
@@ -86,8 +88,10 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
 
 Widget CommonContainerMobile(String s1, s2, s3, image, bool imageLeft) {
   return Container(
-    color: Colors.blueGrey,
     padding: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 30),
+    decoration: BoxDecoration(
+      color: imageLeft ? Colors.blueGrey : Colors.white, // Change background color based on imageLeft
+    ),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -96,6 +100,7 @@ Widget CommonContainerMobile(String s1, s2, s3, image, bool imageLeft) {
           decoration: BoxDecoration(
             image:
                 DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
+            color: Colors.blueGrey,
           ),
         ),
         SizedBox(
