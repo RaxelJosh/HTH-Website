@@ -34,7 +34,6 @@ class _Container6State extends State<Container6> {
             companyLogo(medicare, width: 200, height: 50),
             companyLogo(wellcare, width: 200, height: 50),
             companyLogo(villageMedical, width: 200, height: 90),
-            companyLogo(genesis, width: 200, height: 50),
           ]),
         ],
       ),
@@ -47,19 +46,25 @@ class _Container6State extends State<Container6> {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: 40),
-      child: Column(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          buildCompanyLogoSet('Insurance Partnered With:', [
-            companyLogo(humana, width: 200, height: 50),
-            companyLogo(medicare, width: 200, height: 50),
-            companyLogo(wellcare, width: 200, height: 50),
-            companyLogo(villageMedical, width: 200, height: 90),
-            companyLogo(genesis, width: 200, height: 50),
-          ]),
+          // Column for the first set of logos
+          Column(
+            children: [
+              buildCompanyLogoSet('Insurance Partnered With:', [
+                companyLogo(humana, width: 200, height: 70),
+                companyLogo(medicare, width: 200, height: 100),
+                companyLogo(wellcare, width: 200, height: 100),
+                companyLogo(villageMedical, width: 200, height: 200),
+              ]),
+            ],
+          ),
         ],
       ),
     );
   }
+
   Widget buildCompanyLogoSet(String title, List<Widget> logos) {
     return Column(
       children: [

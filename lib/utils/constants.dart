@@ -18,3 +18,4 @@ const String medicare = 'assets/images/medicare.png';
 const String wellcare = 'assets/images/wellcare.png';
 const String villageMedical = 'assets/images/villageMedical.png';
 const String genesis = 'assets/images/genesis.png';
+const String devoted = 'assets/images/devoted.png';
