@@ -4,6 +4,8 @@ import 'package:xpense_flutter_web/utils/colors.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
 import 'package:xpense_flutter_web/utils/styles.dart';
 
+import '../pages/About_Us.dart';
+
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class _NavBarState extends State<NavBar> {
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
       mobile: MobileNavBar(),
-      desktop: DeskTopNavBar(),
+      desktop: DeskTopNavBar(context),
     );
   }
 }
@@ -32,7 +34,7 @@ Widget MobileNavBar() {
   );
 }
 
-Widget DeskTopNavBar() {
+Widget DeskTopNavBar(BuildContext context) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
     height: 100,
@@ -42,11 +44,14 @@ Widget DeskTopNavBar() {
         navLogo(),
         Row(
           children: [
-            navButton('About Us'),
-            navButton('Services Offered'),
-            navButton('Service Area'),
-            navButton('Employment'),
-            navButton('Contact Us')
+            navButton('About Us', () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AboutUsPage()));
+            }),
+            // navButton('Services Offered'),
+            // navButton('Service Area'),
+            // navButton('Employment'),
+            // navButton('Contact Us')
           ],
         ),
       ],
@@ -54,13 +59,14 @@ Widget DeskTopNavBar() {
   );
 }
 
-Widget navButton(String text) {
+Widget navButton(String text, VoidCallback onPressed) {
   return Container(
-      margin: EdgeInsets.symmetric(horizontal: 4),
-      child: TextButton(
-          onPressed: () {},
-          child:
-              Text(text, style: TextStyle(color: Colors.black, fontSize: 18))));
+    margin: EdgeInsets.symmetric(horizontal: 4),
+    child: TextButton(
+      onPressed: onPressed,
+      child: Text(text, style: TextStyle(color: Colors.black, fontSize: 18)),
+    ),
+  );
 }
 
 Widget navLogo() {

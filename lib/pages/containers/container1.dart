@@ -2,7 +2,6 @@ import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../utils/colors.dart';
@@ -56,7 +55,7 @@ class _Container1State extends State<Container1> {
 
   Widget DesktopContainer2() {
     return Container(
-      height: 450,
+      height: 500,
       width: double.infinity,
       decoration: BoxDecoration(color: AppColors.primary),
       child: Column(
@@ -64,42 +63,6 @@ class _Container1State extends State<Container1> {
           Expanded(
             child: Stack(
               children: [
-                // Positioned(
-                //   top: 20,
-                //   left: 20,
-                //   right: 20,
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //     children: [
-                //       Text(
-                //         'Holy Trinity HealthCare',
-                //         style: TextStyle(
-                //           fontSize: w! / 20,
-                //           fontWeight: FontWeight.bold,
-                //           color: Colors.lightBlue,
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
-                // Positioned(
-                //   top: 60,
-                //   left: 20,
-                //   right: 20,
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                //     children: [
-                //       Text(
-                //         'Holy Trinity HealthCare',
-                //         style: TextStyle(
-                //           fontSize: w! / 20,
-                //           fontWeight: FontWeight.bold,
-                //           color: Colors.cyan,
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
                 // ... (existing code)
                 Positioned(
                     top: -20,
@@ -125,7 +88,6 @@ class _Container1State extends State<Container1> {
                     )),
                 // Add the carousel in the desktop layout
                 Positioned(
-                  bottom: 20,
                   left: 20,
                   right: 20,
                   child: CarouselSlider(
@@ -139,7 +101,7 @@ class _Container1State extends State<Container1> {
                       // Add your carousel items here (e.g., AssetImage('image1.jpg'))
                     ],
                     options: CarouselOptions(
-                      height: 400.0,
+                      height: 500.0,
                       enlargeCenterPage: true,
                       autoPlay: true,
                       aspectRatio: 16 / 9,
