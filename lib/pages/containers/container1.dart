@@ -32,7 +32,7 @@ class _Container1State extends State<Container1> {
           SizedBox(height: 20), // Add some spacing
           CarouselSlider(
             items: [
-              Image.asset('assets/images/illustration1.png', fit: BoxFit.cover),
+              Image.asset('assets/images/clientReview.png', fit: BoxFit.cover),
               Image.asset('assets/images/illustration2.png', fit: BoxFit.cover),
               Image.asset('assets/images/illustration3.png', fit: BoxFit.cover),
               // Add your carousel items here (e.g., AssetImage('image1.jpg'))
@@ -55,7 +55,7 @@ class _Container1State extends State<Container1> {
 
   Widget DesktopContainer2() {
     return Container(
-      height: 500,
+      height: 600,
       width: double.infinity,
       decoration: BoxDecoration(color: AppColors.primary),
       child: Column(
@@ -88,16 +88,17 @@ class _Container1State extends State<Container1> {
                     )),
                 // Add the carousel in the desktop layout
                 Positioned(
-                  left: 20,
-                  right: 20,
+                  top: 30,
+                  left: 30,
+                  right: 30,
                   child: CarouselSlider(
                     items: [
                       Image.asset(
-                          'assets/images/illustration1.png', fit: BoxFit.cover),
+                          'assets/images/clientReview.png', fit: BoxFit.contain),
                       Image.asset(
-                          'assets/images/illustration2.png', fit: BoxFit.cover),
+                          'assets/images/illustration2.png', fit: BoxFit.contain),
                       Image.asset(
-                          'assets/images/illustration3.png', fit: BoxFit.cover),
+                          'assets/images/illustration3.png', fit: BoxFit.contain),
                       // Add your carousel items here (e.g., AssetImage('image1.jpg'))
                     ],
                     options: CarouselOptions(

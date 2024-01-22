@@ -28,12 +28,14 @@ class _Container6State extends State<Container6> {
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: 40),
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          companyLogo(fb),
-          companyLogo(google),
-          companyLogo(cocacola),
-          companyLogo(samsung)
+          buildCompanyLogoSet('Mobile Company Logos', [
+            companyLogo(humana, width: 200, height: 50),
+            companyLogo(medicare, width: 200, height: 50),
+            companyLogo(wellcare, width: 200, height: 50),
+            companyLogo(villageMedical, width: 200, height: 90),
+            companyLogo(genesis, width: 200, height: 50),
+          ]),
         ],
       ),
     );
@@ -45,25 +47,46 @@ class _Container6State extends State<Container6> {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: 40),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
         children: [
-          companyLogo(fb),
-          companyLogo(google),
-          companyLogo(cocacola),
-          companyLogo(samsung)
+          buildCompanyLogoSet('Insurance Partnered With:', [
+            companyLogo(humana, width: 200, height: 50),
+            companyLogo(medicare, width: 200, height: 50),
+            companyLogo(wellcare, width: 200, height: 50),
+            companyLogo(villageMedical, width: 200, height: 90),
+            companyLogo(genesis, width: 200, height: 50),
+          ]),
         ],
       ),
     );
   }
-  Widget companyLogo(String image) {
-      return Container(
-        width: 160,
-        height: 36,
-        margin: EdgeInsets.only(bottom: 20),
-        decoration: BoxDecoration(
-          image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
+  Widget buildCompanyLogoSet(String title, List<Widget> logos) {
+    return Column(
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 18, // Adjust the font size as needed
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         ),
-      );
-    }
+        SizedBox(height: 10), // Add spacing between text and logos
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: logos,
+        ),
+      ],
+    );
+  }
+  Widget companyLogo(String image, {double? width, double? height}) {
+    return Container(
+      width: width,
+      height: height,
+      margin: EdgeInsets.only(bottom: 20),
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
+      ),
+    );
+  }
 }

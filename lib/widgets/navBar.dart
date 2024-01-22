@@ -17,19 +17,34 @@ class _NavBarState extends State<NavBar> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MobileNavBar(),
+      mobile: MobileNavBar(context),
       desktop: DeskTopNavBar(context),
     );
   }
 }
 
-Widget MobileNavBar() {
+Widget MobileNavBar(BuildContext context) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 15),
     height: 70,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [Icon(Icons.menu), navLogo()],
+      children: [
+        GestureDetector(
+          onTap: () {
+            // Navigate to the home screen or perform any other action
+            Navigator.pushReplacementNamed(context, '/'); // Replace '/' with the route of your home screen
+          },
+          child: Container(
+            width: 100, // Adjust the width as needed
+            height: 50, // Adjust the height as needed
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage(logo), fit: BoxFit.cover),
+            ),
+          ),
+        ),
+        // Other components/icons for your mobile navbar can be added here
+      ],
     ),
   );
 }
@@ -41,7 +56,7 @@ Widget DeskTopNavBar(BuildContext context) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        navLogo(),
+        navLogo(context),
         Row(
           children: [
             navButton('About Us', () {
@@ -69,12 +84,18 @@ Widget navButton(String text, VoidCallback onPressed) {
   );
 }
 
-Widget navLogo() {
-  return Container(
-    width: 300,
-    height: 500,
-    decoration: BoxDecoration(
-        image: DecorationImage( image: AssetImage(logo), fit: BoxFit.cover)
+Widget navLogo(BuildContext context) {
+  return GestureDetector(
+    onTap: () {
+      // Navigate to the home screen or perform any other action
+      Navigator.pushReplacementNamed(context, '/'); // Replace '/' with the route of your home screen
+    },
+    child: Container(
+      width: 300,
+      height: 500,
+      decoration: BoxDecoration(
+        image: DecorationImage(image: AssetImage(logo), fit: BoxFit.cover),
+      ),
     ),
   );
 }
