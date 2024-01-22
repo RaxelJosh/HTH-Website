@@ -33,7 +33,7 @@ class _Container6State extends State<Container6> {
             companyLogo(humana, width: 200, height: 50),
             companyLogo(medicare, width: 200, height: 50),
             companyLogo(wellcare, width: 200, height: 50),
-            companyLogo(villageMedical, width: 200, height: 90),
+            companyLogo(samsung, width: 200, height: 50),
           ]),
         ],
       ),
@@ -46,24 +46,28 @@ class _Container6State extends State<Container6> {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(vertical: 40),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      child: Column(
         children: [
-          // Column for the first set of logos
-          Column(
-            children: [
-              buildCompanyLogoSet('Insurance Partnered With:', [
-                companyLogo(humana, width: 200, height: 70),
-                companyLogo(medicare, width: 200, height: 100),
-                companyLogo(wellcare, width: 200, height: 100),
-                companyLogo(villageMedical, width: 200, height: 200),
-              ]),
-            ],
-          ),
+          buildCompanyLogoSet('Insurance Partnered With:', [
+            companyLogo(humana, width: 200, height: 50),
+            companyLogo(medicare, width: 200, height: 50),
+            companyLogo(wellcare, width: 200, height: 50),
+            companyLogo(villageMedical, width: 200, height: 90),
+          ]),
+
+          // Add some spacing between the two sets of logos
+          buildCompanyLogoSet('',[
+            companyLogo(humana, width: 200, height: 50),
+            companyLogo(medicare, width: 200, height: 50),
+            companyLogo(wellcare, width: 200, height: 50),
+            companyLogo(villageMedical, width: 200, height: 90),
+            // Add more logos as needed
+          ]),
         ],
       ),
     );
   }
+
 
   Widget buildCompanyLogoSet(String title, List<Widget> logos) {
     return Column(
