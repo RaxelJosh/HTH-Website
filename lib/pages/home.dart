@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'package:xpense_flutter_web/pages/containers/container1.dart';
 import 'package:xpense_flutter_web/pages/containers/container2.dart';
 import 'package:xpense_flutter_web/pages/containers/container3.dart';
@@ -30,6 +31,41 @@ class _HomeState extends State<Home> {
             NavBar(),
             SizedBox(
               height: 5,
+            ),
+            ResponsiveBuilder(
+              builder: (context, sizingInformation) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Holy Trinity HealthCare',
+                      style: TextStyle(
+                        fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.cyan,
+                      ),
+                    ),
+                  ],
+                );
+              },
+            ),
+            // ResponsiveBuilder for 'Meeting The Needs Of Todays Patient At Home' text
+            ResponsiveBuilder(
+              builder: (context, sizingInformation) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      'Meeting The Needs Of Todays Patient At Home',
+                      style: TextStyle(
+                        fontSize: sizingInformation.isMobile ? w! / 35 : w! / 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.cyan,
+                      ),
+                    ),
+                  ],
+                );
+              },
             ),
             Container1(),
             Container2(),

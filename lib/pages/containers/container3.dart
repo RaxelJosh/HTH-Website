@@ -28,7 +28,7 @@ class _Container3State extends State<Container3> {
         'Real-time \nHome HealthCare \nSupport',
         'We have been providiing quality home health care services in the Houston and surrounding Southesast Texas communities since 2006.  We provide highly skilled, compassionate, reliable Professionals and Care Givers to individuals in need of home health care.illustration1'
         ,illustration1,
-        false);
+        true);
   }
 
   //============== DESKTOP =============
@@ -39,6 +39,6 @@ class _Container3State extends State<Container3> {
         'Real-time \nHome HealthCare \nSupport',
         'We have been providiing quality home health care services in the Houston and surrounding Southesast Texas communities since 2006.  We provide highly skilled, compassionate, reliable Professionals and Care Givers to individuals in need of home health care.illustration1',
         illustration1,
-        false);
+        true);
   }
 }

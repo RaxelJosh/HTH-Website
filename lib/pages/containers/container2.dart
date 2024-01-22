@@ -1,11 +1,9 @@
-import 'package:carousel_slider/carousel_options.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/animation.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:entry/entry.dart';
+import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-
-import '../../utils/colors.dart';
-import '../../utils/constants.dart';
+import 'package:xpense_flutter_web/utils/colors.dart';
+import 'package:xpense_flutter_web/utils/constants.dart';
+import 'package:xpense_flutter_web/utils/styles.dart';
 
 class Container2 extends StatefulWidget {
   const Container2({Key? key}) : super(key: key);
@@ -18,103 +16,150 @@ class _Container2State extends State<Container2> {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MobileContainer2(),
-      desktop: DesktopContainer2(),
+      mobile: MobileContainer1(),
+      desktop: DesktopContainer1(),
     );
   }
 
-  Widget MobileContainer2() {
+  //================ MOBILE ===============
+
+  Widget MobileContainer1() {
     return Container(
-      width: double.infinity,
-      decoration: BoxDecoration(color: AppColors.primary),
+      margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
       child: Column(
         children: [
-          SizedBox(height: 20), // Add some spacing
-          CarouselSlider(
-            items: [
-              Image.asset('assets/images/illustration1.png', fit: BoxFit.cover),
-              Image.asset('assets/images/illustration2.png', fit: BoxFit.cover),
-              Image.asset('assets/images/illustration3.png', fit: BoxFit.cover),
-              // Add your carousel items here (e.g., AssetImage('image1.jpg'))
-            ],
-            options: CarouselOptions(
-              height: 200.0,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
-            ),
+          Container(
+            height: w! / 1.2,
+            width: w! / 1.2,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(illustration1), fit: BoxFit.contain)),
           ),
+          SizedBox(
+            height: 20,
+          ),
+          Text(
+            'Meeting The Needs \nOf Todays Patient \nAt Home',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+                fontSize: w! / 10, fontWeight: FontWeight.bold, height: 1),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            'HealthCare Assistant At The Comfort Of Your Home',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.grey.shade600, fontSize: 16),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          // Container(
+          //   height: 45,
+          //   child: ElevatedButton.icon(
+          //       style: ButtonStyle(
+          //           backgroundColor:
+          //               MaterialStateProperty.all(AppColors.primary)),
+          //       onPressed: () {},
+          //       icon: Icon(Icons.arrow_drop_down),
+          //       label: Text('Try a Demo')),
+          // ),
+          SizedBox(
+            height: 10,
+          ),
+          // Text(
+          //   '— Web, iOs and Android',
+          //   style: TextStyle(color: Colors.grey.shade600, fontSize: 16),
+          // )
         ],
       ),
     );
   }
 
-  Widget DesktopContainer2() {
+  //============== DESKTOP =============
+
+  Widget DesktopContainer1() {
     return Container(
-      height: 500,
-      width: double.infinity,
-      decoration: BoxDecoration(color: AppColors.primary),
+      margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
       child: Column(
         children: [
-          Expanded(
-            child: Stack(
-              children: [
-                // ... (existing code)
-                Positioned(
-                    top: -20,
-                    right: -20,
-                    child: Container(
-                      height: 320,
-                      width: 320,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(vector1), fit: BoxFit.contain),
+          // New row with 'test' text
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     Text(
+          //       'Holy Trinity HealthCare',
+          //       style: TextStyle(
+          //           fontSize: w! / 20,
+          //           fontWeight: FontWeight.bold,
+          //           color: Colors.cyan,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     Text(
+          //       'Meeting The Needs Of Todays Patient At Home',
+          //       style: TextStyle(
+          //         fontSize: w! / 30,
+          //         fontWeight: FontWeight.bold,
+          //         color: Colors.cyan,
+          //       ),
+          //     ),
+          //   ],
+          // ),
+          // Text content
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: Container(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Quality \nHealthcare \nSince 2006',
+                        style: TextStyle(
+                          fontSize: w! / 30,
+                          fontWeight: FontWeight.bold,
+                          height: 1,
+                        ),
                       ),
-                    )),
-                Positioned(
-                    bottom: -20,
-                    left: -20,
-                    child: Container(
-                      height: 320,
-                      width: 320,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(vector2), fit: BoxFit.contain),
+                      SizedBox(
+                        height: 20,
                       ),
-                    )),
-                // Add the carousel in the desktop layout
-                Positioned(
-                  bottom: 20,
-                  left: 20,
-                  right: 20,
-                  child: CarouselSlider(
-                    items: [
-                      Image.asset(
-                          'assets/images/illustration1.png', fit: BoxFit.cover),
-                      Image.asset(
-                          'assets/images/illustration2.png', fit: BoxFit.cover),
-                      Image.asset(
-                          'assets/images/illustration3.png', fit: BoxFit.cover),
-                      // Add your carousel items here (e.g., AssetImage('image1.jpg'))
+                      Text(
+                        'We provide: '
+                            '\nhighly skilled, compassionate, reliable Professionals and Care Givers '
+                            '\nto individuals in need of home health care Since 2006.',
+                        style: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
                     ],
-                    options: CarouselOptions(
-                      height: 400.0,
-                      enlargeCenterPage: true,
-                      autoPlay: true,
-                      aspectRatio: 16 / 9,
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      enableInfiniteScroll: true,
-                      autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      viewportFraction: 0.8,
+                  ),
+                ),
+              ),
+              // Existing image
+              Expanded(
+                child: Container(
+                  height: 530,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(illustration1),
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

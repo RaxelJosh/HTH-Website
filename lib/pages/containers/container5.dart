@@ -28,7 +28,7 @@ class _Container5State extends State<Container5> {
         'Use anytime \nwhen you \nneed',
         'Tellus lacus morbi sagittis lacus in. Amet nisl at mauris enim accumsan nisi, tincidunt vel. Enim ipsum, amet quis ullamcorper eget ut.',
         illustration3,
-        false);
+        true);
   }
 
   //============== DESKTOP =============
@@ -39,6 +39,6 @@ class _Container5State extends State<Container5> {
         'Use anytime \nwhen you \nneed',
         'Tellus lacus morbi sagittis lacus in. Amet nisl at \nmauris enim accumsan nisi, tincidunt vel. \nEnim ipsum, amet quis ullamcorper eget ut.',
         illustration3,
-        false);
+        true);
   }
 }

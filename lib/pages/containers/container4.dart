@@ -30,7 +30,7 @@ class _Container4State extends State<Container4> {
         'Our Team of Professionals are specially \ntrained and experienced in providing Medical Services, Medication Services,'
             'Post Operative Care, Venipuncture, Wound Care, Comprehensive Rehabilitative Care and many more.',
         illustration2,
-        true);
+        false);
   }
 
   //============== DESKTOP =============
@@ -42,6 +42,6 @@ class _Container4State extends State<Container4> {
         'Our Team of Professionals are specially trained and experienced in providing Medical Services, Medication Services,'
             'Post Operative Care, Venipuncture, Wound Care, Comprehensive Rehabilitative Care and many more.',
         illustration2,
-        true);
+        false);
   }
 }
