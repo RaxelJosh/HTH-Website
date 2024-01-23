@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:xpense_flutter_web/pages/Contact_Us.dart';
+import 'package:xpense_flutter_web/pages/Employment.dart';
+import 'package:xpense_flutter_web/pages/Service_Area.dart';
+import 'package:xpense_flutter_web/pages/Services_Offered.dart';
 import 'package:xpense_flutter_web/utils/colors.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
 import 'package:xpense_flutter_web/utils/styles.dart';
@@ -62,6 +66,22 @@ Widget DeskTopNavBar(BuildContext context) {
             navButton('About Us', () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => AboutUsPage()));
+            }),
+            navButton('Service Offered', () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ServicesOfferedPage()));
+            }),
+            navButton('Service Area', () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ServiceAreaPage()));
+            }),
+            navButton('Employment', () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => EmploymentPage()));
+            }),
+            navButton('Contact Us', () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ContactUsPage()));
             }),
             // navButton('Services Offered'),
             // navButton('Service Area'),
