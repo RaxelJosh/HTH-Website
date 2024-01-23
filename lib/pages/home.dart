@@ -58,8 +58,8 @@ class _HomeState extends State<Home> {
                     Text(
                       'Meeting The Needs Of Todays Patient At Home',
                       style: TextStyle(
-                        fontSize: sizingInformation.isMobile ? w! / 35 : w! / 30,
-                        fontWeight: FontWeight.bold,
+                        fontSize: sizingInformation.isMobile ? w! / 60 : w! / 40,
+                        fontWeight: FontWeight.w100,
                         color: Colors.cyan,
                       ),
                     ),
