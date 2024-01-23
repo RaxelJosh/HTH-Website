@@ -121,7 +121,18 @@ class _Container2State extends State<Container2> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Quality \nHealthcare \nSince 2006',
+                        'About Us'.toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.black,
+                          height: 1,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        'Quality Healthcare \nSince 2006',
                         style: TextStyle(
                           fontSize: w! / 30,
                           fontWeight: FontWeight.bold,
@@ -133,7 +144,8 @@ class _Container2State extends State<Container2> {
                       ),
                       Text(
                         'We provide: '
-                            '\nhighly skilled, compassionate, reliable Professionals and Care Givers '
+                            '\nhighly skilled, compassionate,'
+                            '\nreliable Professionals and Care Givers'
                             '\nto individuals in need of home health care Since 2006.',
                         style: TextStyle(
                           color: Colors.grey.shade500,

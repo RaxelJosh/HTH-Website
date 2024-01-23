@@ -28,7 +28,7 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
             Text(
               s1.toUpperCase(),
               style: TextStyle(
-                color: Colors.grey.shade500,
+                color: Colors.black,
                 fontSize: 16,
               ),
             ),
