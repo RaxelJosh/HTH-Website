@@ -35,6 +35,12 @@ class _Container6State extends State<Container6> {
             companyLogo(wellcare, width: 200, height: 50),
             companyLogo(samsung, width: 200, height: 50),
           ]),
+          buildCompanyLogoSet('',[
+            companyLogo(devoted, width: 200, height: 200),
+            companyLogo(genesis, width: 200, height: 40),
+            companyLogo(kelsey, width: 200, height: 35),
+            // Add more logos as needed
+          ]),
         ],
       ),
     );
@@ -45,22 +51,21 @@ class _Container6State extends State<Container6> {
   Widget DesktopContainer6() {
     return Container(
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 40),
+      padding: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
           buildCompanyLogoSet('Insurance Partnered With:', [
-            companyLogo(humana, width: 200, height: 50),
-            companyLogo(medicare, width: 200, height: 50),
-            companyLogo(wellcare, width: 200, height: 50),
-            companyLogo(villageMedical, width: 200, height: 90),
+            companyLogo(humana, width: 200, height: 90),
+            companyLogo(medicare, width: 200, height: 90),
+            companyLogo(wellcare, width: 200, height: 90),
+            companyLogo(villageMedical, width: 200, height: 170),
           ]),
 
           // Add some spacing between the two sets of logos
           buildCompanyLogoSet('',[
-            companyLogo(humana, width: 200, height: 50),
-            companyLogo(medicare, width: 200, height: 50),
-            companyLogo(wellcare, width: 200, height: 50),
-            companyLogo(villageMedical, width: 200, height: 90),
+            companyLogo(devoted, width: 200, height: 200),
+            companyLogo(genesis, width: 200, height: 40),
+            companyLogo(kelsey, width: 200, height: 35),
             // Add more logos as needed
           ]),
         ],
@@ -80,7 +85,7 @@ class _Container6State extends State<Container6> {
             color: Colors.black,
           ),
         ),
-        SizedBox(height: 10), // Add spacing between text and logos
+        SizedBox(height: 5), // Add spacing between text and logos
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: logos,
@@ -92,7 +97,7 @@ class _Container6State extends State<Container6> {
     return Container(
       width: width,
       height: height,
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: 5),
       decoration: BoxDecoration(
         image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
       ),
