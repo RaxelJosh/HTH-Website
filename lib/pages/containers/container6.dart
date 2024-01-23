@@ -26,19 +26,22 @@ class _Container6State extends State<Container6> {
     return Container(
       width: double.infinity,
       color: Colors.white,
-      padding: EdgeInsets.symmetric(vertical: 40),
+      padding: EdgeInsets.symmetric(), // Reduce vertical padding
       child: Column(
         children: [
-          buildCompanyLogoSet('Mobile Company Logos', [
-            companyLogo(humana, width: 200, height: 50),
-            companyLogo(medicare, width: 200, height: 50),
-            companyLogo(wellcare, width: 200, height: 50),
-            companyLogo(samsung, width: 200, height: 50),
+          buildCompanyLogoSet('Insurance Partnered With:', [
+            companyLogo(humana, width: 150, height: 100), // Adjust logo size
+            companyLogo(medicare, width: 150, height: 100),
+            companyLogo(wellcare, width: 150, height: 100),
           ]),
-          buildCompanyLogoSet('',[
-            companyLogo(devoted, width: 200, height: 200),
-            companyLogo(genesis, width: 200, height: 40),
-            companyLogo(kelsey, width: 200, height: 35),
+          buildCompanyLogoSet('', [
+            companyLogo(villageMedical, width: 200, height: 170),
+          ]),
+           // Reduce spacing between sets
+          buildCompanyLogoSet('', [
+            companyLogo(devoted, width: 150, height: 150),
+            companyLogo(genesis, width: 150, height: 30),
+            companyLogo(kelsey, width: 150, height: 25),
             // Add more logos as needed
           ]),
         ],
@@ -62,7 +65,7 @@ class _Container6State extends State<Container6> {
           ]),
 
           // Add some spacing between the two sets of logos
-          buildCompanyLogoSet('',[
+          buildCompanyLogoSet('', [
             companyLogo(devoted, width: 200, height: 200),
             companyLogo(genesis, width: 200, height: 40),
             companyLogo(kelsey, width: 200, height: 35),
@@ -84,8 +87,7 @@ class _Container6State extends State<Container6> {
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
-        ),
-        SizedBox(height: 5), // Add spacing between text and logos
+        ), // Add spacing between text and logos
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: logos,
@@ -93,14 +95,18 @@ class _Container6State extends State<Container6> {
       ],
     );
   }
+
   Widget companyLogo(String image, {double? width, double? height}) {
     return Container(
       width: width,
       height: height,
-      margin: EdgeInsets.only(bottom: 5),
+      margin: EdgeInsets.only(),
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage(image), fit: BoxFit.contain),
+        image: DecorationImage(
+          image: AssetImage(image),
+          fit: BoxFit.contain,
+        ),
       ),
     );
   }
-}
+  }
