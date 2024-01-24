@@ -20,3 +20,4 @@ const String villageMedical = 'assets/images/villageMedical.png';
 const String genesis = 'assets/images/genesis.png';
 const String devoted = 'assets/images/devoted.png';
 const String kelsey = 'assets/images/kelsey.png';
+const String texas1 = 'assets/images/texas1.png';

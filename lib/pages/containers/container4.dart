@@ -25,11 +25,10 @@ class _Container4State extends State<Container4> {
   Widget MobileContainer4() {
     color: Colors.cyanAccent;
     return CommonContainerMobile(
-        'Services Offered',
+        'Services Area',
         'HealthCare Comfort \nDelivered \nAt Your Home',
-        'Our Team of Professionals are specially \ntrained and experienced in providing Medical Services, Medication Services,'
-            'Post Operative Care, Venipuncture, Wound Care, Comprehensive Rehabilitative Care and many more.',
-        illustration2,
+        '',
+        texas1,
         false);
   }
 
@@ -37,11 +36,10 @@ class _Container4State extends State<Container4> {
 
   Widget DesktopContainer4() {
     return CommonContainer(
-        'Services Offered',
+        'Services Area',
         'HealthCare Comfort \nDelivered \nAt Your Home',
-        'Our Team of Professionals are specially trained and experienced in providing Medical Services, Medication Services,'
-            'Post Operative Care, Venipuncture, Wound Care, Comprehensive Rehabilitative Care and many more.',
-        illustration2,
+        '',
+        texas1,
         false);
   }
 }

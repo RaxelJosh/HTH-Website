@@ -24,10 +24,14 @@ class _Container3State extends State<Container3> {
 
   Widget MobileContainer3() {
     return CommonContainerMobile(
-        'About Us',
-        'Real-time \nHome HealthCare \nSupport',
-        'We have been providiing quality home health care services in the Houston and surrounding Southesast Texas communities since 2006.  We provide highly skilled, compassionate, reliable Professionals and Care Givers to individuals in need of home health care.illustration1'
-        ,illustration1,
+        'Service Offered',
+        'Providing The BEST \nHealthCare \nSupport',
+        'We have been PROVIDING QUALITY HOME HEALTHCARE \n'
+            'services in the Houston and surrounding SouthEast Texas. \n '
+            'Providing SKILLED NURSES \n'
+            'for MEDICAL AND PHYSICAL CARE \n'
+            'support or even MEDICATION Assistance and Support',
+        illustration1,
         true);
   }
 
@@ -35,9 +39,13 @@ class _Container3State extends State<Container3> {
 
   Widget DesktopContainer3() {
     return CommonContainer(
-        'About Us',
-        'Real-time \nHome HealthCare \nSupport',
-        'We have been providiing quality home health care services in the Houston and surrounding Southesast Texas communities since 2006.  We provide highly skilled, compassionate, reliable Professionals and Care Givers to individuals in need of home health care.illustration1',
+        'Service Offered',
+        'Providing The BEST \nHealthCare \nSupport',
+        'We have been PROVIDING QUALITY HOME HEALTHCARE \n'
+            'services in the Houston and surrounding SouthEast Texas. \n '
+            'Providing SKILLED NURSES \n'
+            'for MEDICAL AND PHYSICAL CARE \n'
+            'support or even MEDICATION Assistance and Support',
         illustration1,
         true);
   }

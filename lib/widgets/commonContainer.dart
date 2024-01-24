@@ -4,7 +4,7 @@ import 'package:xpense_flutter_web/utils/constants.dart';
 
 Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
   return Container(
-    padding: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 30),
+    padding: EdgeInsets.symmetric(horizontal: w! / 20, vertical: 30),
     decoration: BoxDecoration(
       color: imageLeft ? Colors.blueGrey : Colors.white, // Change background color based on imageLeft
     ),
@@ -29,7 +29,7 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
               s1.toUpperCase(),
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 16,
+                fontSize: 20,
               ),
             ),
             SizedBox(
@@ -40,7 +40,7 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
               textAlign: imageLeft ? TextAlign.right : TextAlign.left,
               style: TextStyle(
                   color: Colors.black,
-                  fontSize: w! / 20,
+                  fontSize: w! / 36,
                   height: 1.1,
                   fontWeight: FontWeight.bold),
             ),
@@ -88,7 +88,7 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
 
 Widget CommonContainerMobile(String s1, s2, s3, image, bool imageLeft) {
   return Container(
-    padding: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 30),
+    padding: EdgeInsets.symmetric(horizontal: w! / 25, vertical: 30),
     decoration: BoxDecoration(
       color: imageLeft ? Colors.blueGrey : Colors.white, // Change background color based on imageLeft
     ),
