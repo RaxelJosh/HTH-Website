@@ -21,3 +21,4 @@ const String genesis = 'assets/images/genesis.png';
 const String devoted = 'assets/images/devoted.png';
 const String kelsey = 'assets/images/kelsey.png';
 const String texas1 = 'assets/images/texas1.png';
+const String banner = 'assets/images/background_image.jpg';

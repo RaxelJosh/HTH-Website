@@ -24,28 +24,62 @@ class _Container1State extends State<Container1> {
   }
 
   Widget MobileContainer2() {
+    final double standardImageWidth = 300; // Set the standard width for images
+    final double standardImageHeight = 200; // Set the standard height for images
+
     return Container(
       width: double.infinity,
-      decoration: BoxDecoration(color: AppColors.primary),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(banner),
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         children: [
           SizedBox(height: 20), // Add some spacing
-          CarouselSlider(
-            items: [
-              Image.asset('assets/images/clientReview.png', fit: BoxFit.cover),
-              Image.asset('assets/images/illustration2.png', fit: BoxFit.cover),
-              Image.asset('assets/images/illustration3.png', fit: BoxFit.cover),
-              // Add your carousel items here (e.g., AssetImage('image1.jpg'))
-            ],
-            options: CarouselOptions(
-              height: 200.0,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              aspectRatio: 16 / 9,
-              autoPlayCurve: Curves.fastOutSlowIn,
-              enableInfiniteScroll: true,
-              autoPlayAnimationDuration: Duration(milliseconds: 800),
-              viewportFraction: 0.8,
+          Padding(
+            padding: EdgeInsets.only(left: 5), // Adjust the padding for horizontal position
+            child: Align(
+              alignment: Alignment.centerLeft, // Align carousel to the left
+              child: CarouselSlider(
+                items: [
+                  Container(
+                    width: standardImageWidth,
+                    height: standardImageHeight,
+                    child: Image.asset(
+                      'assets/images/clientReview.png',
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Container(
+                    width: standardImageWidth,
+                    height: standardImageHeight,
+                    child: Image.asset(
+                      'assets/images/illustration2.png',
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  Container(
+                    width: standardImageWidth,
+                    height: standardImageHeight,
+                    child: Image.asset(
+                      'assets/images/illustration3.png',
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ],
+                options: CarouselOptions(
+                  height: standardImageHeight,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  aspectRatio: standardImageWidth / standardImageHeight,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  viewportFraction: 0.8,
+                ),
+              ),
             ),
           ),
         ],
@@ -53,67 +87,75 @@ class _Container1State extends State<Container1> {
     );
   }
 
+
+
   Widget DesktopContainer2() {
+    final double standardImageWidth = 750; // Set the standard width for images
+    final double standardImageHeight = 500; // Set the standard height for images
+
     return Container(
       height: 600,
       width: double.infinity,
-      decoration: BoxDecoration(color: AppColors.primary),
-      child: Column(
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(banner),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Stack(
         children: [
-          Expanded(
-            child: Stack(
-              children: [
-                // ... (existing code)
-                Positioned(
-                    top: -20,
-                    right: -20,
-                    child: Container(
-                      height: 320,
-                      width: 320,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(vector1), fit: BoxFit.contain),
-                      ),
-                    )),
-                Positioned(
-                    bottom: -20,
-                    left: -20,
-                    child: Container(
-                      height: 320,
-                      width: 320,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(vector2), fit: BoxFit.contain),
-                      ),
-                    )),
-                // Add the carousel in the desktop layout
-                Positioned(
-                  top: 30,
-                  left: 30,
-                  right: 30,
-                  child: CarouselSlider(
+          Positioned(
+            top: 20,
+            left: 5,
+            child: Container(
+              padding: EdgeInsets.only(left: 20), // Adjust left padding here
+              width: MediaQuery
+                  .of(context)
+                  .size
+                  .width * 0.6,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CarouselSlider(
                     items: [
-                      Image.asset(
-                          'assets/images/clientReview.png', fit: BoxFit.contain),
-                      Image.asset(
-                          'assets/images/illustration2.png', fit: BoxFit.contain),
-                      Image.asset(
-                          'assets/images/illustration3.png', fit: BoxFit.contain),
-                      // Add your carousel items here (e.g., AssetImage('image1.jpg'))
+                      Container(
+                        width: standardImageWidth,
+                        height: standardImageHeight,
+                        child: Image.asset(
+                          'assets/images/clientReview.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Container(
+                        width: standardImageWidth,
+                        height: standardImageHeight,
+                        child: Image.asset(
+                          'assets/images/illustration2.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Container(
+                        width: standardImageWidth,
+                        height: standardImageHeight,
+                        child: Image.asset(
+                          'assets/images/illustration3.png',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
                     ],
                     options: CarouselOptions(
-                      height: 500.0,
+                      height: standardImageHeight,
                       enlargeCenterPage: true,
                       autoPlay: true,
-                      aspectRatio: 16 / 9,
+                      aspectRatio: standardImageWidth / standardImageHeight,
                       autoPlayCurve: Curves.fastOutSlowIn,
                       enableInfiniteScroll: true,
                       autoPlayAnimationDuration: Duration(milliseconds: 800),
                       viewportFraction: 0.8,
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
