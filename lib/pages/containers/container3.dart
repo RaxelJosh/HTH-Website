@@ -28,10 +28,9 @@ class _Container3State extends State<Container3> {
         'Providing The BEST \nHealthCare \nSupport',
         'We have been PROVIDING QUALITY HOME HEALTHCARE \n'
             'services in the Houston and surrounding SouthEast Texas. \n '
-            'Providing SKILLED NURSES \n'
-            'for MEDICAL AND PHYSICAL CARE \n'
+            'Providing SKILLED NURSES for MEDICAL AND PHYSICAL CARE \n'
             'support or even MEDICATION Assistance and Support',
-        illustration1,
+        nurse,
         true);
   }
 
@@ -42,11 +41,9 @@ class _Container3State extends State<Container3> {
         'Service Offered',
         'Providing The BEST \nHealthCare \nSupport',
         'We have been PROVIDING QUALITY HOME HEALTHCARE \n'
-            'services in the Houston and surrounding SouthEast Texas. \n '
-            'Providing SKILLED NURSES \n'
-            'for MEDICAL AND PHYSICAL CARE \n'
-            'support or even MEDICATION Assistance and Support',
-        illustration1,
+            'services in Houston and surrounding SouthEast Texas Providing SKILLED NURSES. \n'
+            'for MEDICAL AND PHYSICAL CARE support or even MEDICATION Assistance and Support.',
+        nurse,
         true);
   }
 }

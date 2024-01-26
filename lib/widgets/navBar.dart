@@ -75,7 +75,7 @@ Widget DeskTopNavBar(BuildContext context) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ServiceAreaPage()));
             }),
-            navButton('Employment', () {
+            navButton('Career', () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => EmploymentPage()));
             }),

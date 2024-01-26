@@ -33,7 +33,7 @@ class _Container2State extends State<Container2> {
             width: w! / 1.2,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(illustration1), fit: BoxFit.contain)),
+                    image: AssetImage(home), fit: BoxFit.contain)),
           ),
           SizedBox(
             height: 20,
@@ -55,23 +55,9 @@ class _Container2State extends State<Container2> {
           SizedBox(
             height: 30,
           ),
-          // Container(
-          //   height: 45,
-          //   child: ElevatedButton.icon(
-          //       style: ButtonStyle(
-          //           backgroundColor:
-          //               MaterialStateProperty.all(AppColors.primary)),
-          //       onPressed: () {},
-          //       icon: Icon(Icons.arrow_drop_down),
-          //       label: Text('Try a Demo')),
-          // ),
           SizedBox(
             height: 10,
           ),
-          // Text(
-          //   '— Web, iOs and Android',
-          //   style: TextStyle(color: Colors.grey.shade600, fontSize: 16),
-          // )
         ],
       ),
     );
@@ -84,34 +70,6 @@ class _Container2State extends State<Container2> {
       margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
       child: Column(
         children: [
-          // New row with 'test' text
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //   children: [
-          //     Text(
-          //       'Holy Trinity HealthCare',
-          //       style: TextStyle(
-          //           fontSize: w! / 20,
-          //           fontWeight: FontWeight.bold,
-          //           color: Colors.cyan,
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          //   children: [
-          //     Text(
-          //       'Meeting The Needs Of Todays Patient At Home',
-          //       style: TextStyle(
-          //         fontSize: w! / 30,
-          //         fontWeight: FontWeight.bold,
-          //         color: Colors.cyan,
-          //       ),
-          //     ),
-          //   ],
-          // ),
-          // Text content
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -140,7 +98,7 @@ class _Container2State extends State<Container2> {
                         ),
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 10,
                       ),
                       Text(
                         'We provide: '
@@ -148,8 +106,8 @@ class _Container2State extends State<Container2> {
                             '\nreliable Professionals and Care Givers'
                             '\nto individuals in need of home health care Since 2006.',
                         style: TextStyle(
-                          color: Colors.grey.shade500,
-                          fontSize: 16,
+                          color: Colors.black,
+                          fontSize: 20,
                         ),
                       ),
                       SizedBox(
@@ -165,7 +123,7 @@ class _Container2State extends State<Container2> {
                   height: 530,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(illustration1),
+                      image: AssetImage(home),
                       fit: BoxFit.contain,
                     ),
                   ),

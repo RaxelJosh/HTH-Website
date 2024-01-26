@@ -60,7 +60,7 @@ class DesktopContainer7 extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Text(
-                'Contact Info & Copyright',
+                '© HTH Holy Trinity Healthcare',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -73,11 +73,16 @@ class DesktopContainer7 extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                'Your contact information and copyright details here...',
+                'Holy Trinity Healthcare\n'
+                    '11104 W.Airport BLVD. Suite 131 Stafford, TX 77477\n'
+                    'Tel: 713-333-3660\n'
+                    'Fax: 713-333-4660\n'
+                    'Email: info@hthhealthcare.com',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
                 ),
+                textAlign: TextAlign.right,
               ),
             ),
           ),

@@ -32,7 +32,7 @@ class EmploymentPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Employment',
+                          'Career',
                           style: TextStyle(
                             fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
                             fontWeight: FontWeight.bold,

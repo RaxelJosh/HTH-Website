@@ -22,3 +22,6 @@ const String devoted = 'assets/images/devoted.png';
 const String kelsey = 'assets/images/kelsey.png';
 const String texas1 = 'assets/images/texas1.png';
 const String banner = 'assets/images/background_image.jpg';
+const String careers = 'assets/images/Careers.jpg';
+const String nurse = 'assets/images/nurse-patient.png';
+const String home = 'assets/images/Home-healthcare.jpg';

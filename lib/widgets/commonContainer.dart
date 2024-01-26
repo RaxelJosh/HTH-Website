@@ -51,24 +51,10 @@ Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {
               s3,
               textAlign: imageLeft ? TextAlign.right : TextAlign.left,
               style: TextStyle(
-                color: Colors.grey.shade400,
-                fontSize: 16,
+                color: Colors.black,
+                fontSize: 20,
               ),
             ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-            // TextButton.icon(
-            //     onPressed: () {},
-            //     icon: Icon(
-            //       Icons.arrow_forward_ios,
-            //       size: 20,
-            //       color: AppColors.primary,
-            //     ),
-            //     label: Text(
-            //       'Learn more',
-            //       style: TextStyle(color: AppColors.primary),
-            //     ))
           ],
         )),
         !imageLeft
@@ -133,23 +119,12 @@ Widget CommonContainerMobile(String s1, s2, s3, image, bool imageLeft) {
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.grey.shade500,
-            fontSize: 16,
+            fontSize: 20,
           ),
         ),
         SizedBox(
           height: 20,
         ),
-        // TextButton.icon(
-        //     onPressed: () {},
-        //     icon: Icon(
-        //       Icons.arrow_forward_ios,
-        //       size: 20,
-        //       color: AppColors.primary,
-        //     ),
-        //     label: Text(
-        //       'Learn more',
-        //       style: TextStyle(color: AppColors.primary),
-        //     )),
       ],
     ),
   );
