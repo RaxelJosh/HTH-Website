@@ -2,14 +2,12 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:xpense_flutter_web/pages/containers/container2.dart';
+import 'package:xpense_flutter_web/pages/containers/container7.dart';
 
 import '../utils/constants.dart';
 import '../widgets/navBar.dart';
 import 'containers/container1.dart';
-import 'containers/container2.dart';
-import 'containers/container3.dart';
-import 'containers/container4.dart';
-import 'containers/container5.dart';
 import 'containers/container6.dart';
 
 class AboutUsPage extends StatelessWidget {
@@ -32,7 +30,7 @@ class AboutUsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'About us',
+                          'Holy Trinity HealthCare',
                           style: TextStyle(
                             fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
                             fontWeight: FontWeight.bold,
@@ -52,8 +50,8 @@ class AboutUsPage extends StatelessWidget {
                         Text(
                           'Meeting The Needs Of Todays Patient At Home',
                           style: TextStyle(
-                            fontSize: sizingInformation.isMobile ? w! / 35 : w! / 30,
-                            fontWeight: FontWeight.bold,
+                            fontSize: sizingInformation.isMobile ? w! / 60 : w! / 40,
+                            fontWeight: FontWeight.w100,
                             color: Colors.cyan,
                           ),
                         ),
@@ -63,10 +61,8 @@ class AboutUsPage extends StatelessWidget {
                 ),
                 Container1(),
                 Container2(),
-                Container3(),
-                Container4(),
-                Container5(),
-                Container6(),
+                Container6(isTrue: true,),
+                Container7(),
                 // MainContent()
               ],
             ),

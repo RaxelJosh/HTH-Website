@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:xpense_flutter_web/pages/containers/container7.dart';
 
 import '../utils/constants.dart';
 import '../widgets/navBar.dart';
@@ -52,8 +53,8 @@ class ServiceAreaPage extends StatelessWidget {
                         Text(
                           'Meeting The Needs Of Todays Patient At Home',
                           style: TextStyle(
-                            fontSize: sizingInformation.isMobile ? w! / 35 : w! / 30,
-                            fontWeight: FontWeight.bold,
+                            fontSize: sizingInformation.isMobile ? w! / 60 : w! / 40,
+                            fontWeight: FontWeight.w100,
                             color: Colors.cyan,
                           ),
                         ),
@@ -62,11 +63,9 @@ class ServiceAreaPage extends StatelessWidget {
                   },
                 ),
                 Container1(),
-                Container2(),
-                Container3(),
                 Container4(),
-                Container5(),
-                Container6(),
+                Container6(isTrue: false,),
+                Container7(),
                 // MainContent()
               ],
             ),

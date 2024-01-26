@@ -73,7 +73,7 @@ class _HomeState extends State<Home> {
             Container3(),
             Container4(),
             Container5(),
-            Container6(),
+            Container6(isTrue: false,),
             Container7(),
             // MainContent()
           ],

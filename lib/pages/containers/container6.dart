@@ -5,7 +5,9 @@ import 'package:xpense_flutter_web/utils/constants.dart';
 import 'package:xpense_flutter_web/widgets/commonContainer.dart';
 
 class Container6 extends StatefulWidget {
-  const Container6({Key? key}) : super(key: key);
+  final bool isTrue;
+
+  const Container6({Key? key, required this.isTrue}) : super(key: key);
 
   @override
   _Container6State createState() => _Container6State();
@@ -25,35 +27,31 @@ class _Container6State extends State<Container6> {
   Widget MobileContainer6() {
     return Container(
       width: double.infinity,
-      color: Colors.white,
-      padding: EdgeInsets.symmetric(), // Reduce vertical padding
+      color: widget.isTrue ? Colors.white30 : Colors.white, // Change background color based on isTrue
+      padding: EdgeInsets.symmetric(vertical: 0), // Remove vertical padding
       child: Column(
         children: [
           buildCompanyLogoSet('Insurance Partnered With:', [
-            companyLogo(humana, width: 150, height: 100), // Adjust logo size
+            companyLogo(humana, width: 150, height: 100),
             companyLogo(medicare, width: 150, height: 100),
             companyLogo(wellcare, width: 150, height: 100),
           ]),
           buildCompanyLogoSet('', [
             companyLogo(villageMedical, width: 200, height: 170),
           ]),
-           // Reduce spacing between sets
           buildCompanyLogoSet('', [
             companyLogo(devoted, width: 150, height: 150),
             companyLogo(genesis, width: 150, height: 30),
             companyLogo(kelsey, width: 150, height: 25),
-            // Add more logos as needed
           ]),
         ],
       ),
     );
   }
 
-  //============== DESKTOP =============
-
   Widget DesktopContainer6() {
     return Container(
-      color: Colors.white,
+      color: widget.isTrue ? Colors.blueGrey : Colors.white, // Change background color based on isTrue
       padding: EdgeInsets.symmetric(vertical: 10),
       child: Column(
         children: [
@@ -63,18 +61,17 @@ class _Container6State extends State<Container6> {
             companyLogo(wellcare, width: 200, height: 90),
             companyLogo(villageMedical, width: 200, height: 170),
           ]),
-
-          // Add some spacing between the two sets of logos
+          SizedBox(height: 20), // Add spacing between the two sets of logos
           buildCompanyLogoSet('', [
             companyLogo(devoted, width: 200, height: 200),
             companyLogo(genesis, width: 200, height: 40),
             companyLogo(kelsey, width: 200, height: 35),
-            // Add more logos as needed
           ]),
         ],
       ),
     );
   }
+}
 
 
   Widget buildCompanyLogoSet(String title, List<Widget> logos) {
@@ -108,5 +105,4 @@ class _Container6State extends State<Container6> {
         ),
       ),
     );
-  }
   }
