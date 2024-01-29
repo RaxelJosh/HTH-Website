@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:xpense_flutter_web/pages/containers/container7.dart';
+import 'package:xpense_flutter_web/pages/containers/container_Contact_Us.dart';
 
 import '../utils/constants.dart';
 import '../widgets/navBar.dart';
@@ -63,6 +64,7 @@ class ContactUsPage extends StatelessWidget {
                   },
                 ),
                 Container1(),
+                ContactUsContainer(),
                 Container6(isTrue: false,),
                 Container7(),
                 // MainContent()

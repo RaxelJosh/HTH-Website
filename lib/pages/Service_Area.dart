@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:xpense_flutter_web/pages/containers/container7.dart';
+import 'package:xpense_flutter_web/pages/containers/container_Service_Area.dart';
 
 import '../utils/constants.dart';
 import '../widgets/navBar.dart';
@@ -64,6 +65,7 @@ class ServiceAreaPage extends StatelessWidget {
                 ),
                 Container1(),
                 Container4(),
+                ServiceAreaContainer(),
                 Container6(isTrue: false,),
                 Container7(),
                 // MainContent()
