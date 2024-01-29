@@ -30,7 +30,7 @@ class AboutUsPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Holy Trinity HealthCare',
+                          'About Us',
                           style: TextStyle(
                             fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
                             fontWeight: FontWeight.bold,
@@ -61,7 +61,7 @@ class AboutUsPage extends StatelessWidget {
                 ),
                 Container1(),
                 Container2(),
-                Container6(isTrue: true,),
+                Container6(isTrue: false,),
                 Container7(),
                 // MainContent()
               ],

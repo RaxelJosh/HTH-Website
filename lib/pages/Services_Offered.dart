@@ -64,7 +64,7 @@ class ServicesOfferedPage extends StatelessWidget {
                 ),
                 Container1(),
                 Container3(),
-                Container6(isTrue: true,),
+                Container6(isTrue: false,),
                 Container7(),
                 // MainContent()
               ],
