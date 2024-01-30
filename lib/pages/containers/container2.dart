@@ -67,7 +67,7 @@ class _Container2State extends State<Container2> {
 
   Widget DesktopContainer1() {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: w! / 10, vertical: 20),
+      margin: EdgeInsets.symmetric(horizontal: w! / 20, vertical: 20),
       child: Column(
         children: [
           Row(
