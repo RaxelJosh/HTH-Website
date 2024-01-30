@@ -1,7 +1,6 @@
 import 'dart:ui'; // Import the 'ui' library for using the ImageFilter class
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:hovering/hovering.dart'; // Import the hovering package
 import 'package:xpense_flutter_web/utils/constants.dart';
 
 class ServiceOfferedContainer extends StatelessWidget {
@@ -122,24 +121,12 @@ class MobileGallery extends StatelessWidget {
             (index) => Container(
           margin: EdgeInsets.all(8),
           color: Colors.grey[300],
-          child: HoverWidget(
-            onHover: (_) {}, // Add an empty onHover callback
-            hoverChild: Center(
-              child: Text(
-                imageTexts[index], // Display corresponding text for the image
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+          child: HoverImage(
+            image: Image.asset(
+              imageAssets[index],
+              fit: BoxFit.cover,
             ),
-            child: Center(
-              child: Image.asset(
-                imageAssets[index],
-                fit: BoxFit.cover,
-              ),
-            ),
+            hoverText: imageTexts[index],
           ),
         ),
       ),
@@ -160,7 +147,7 @@ class DesktopGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 4,
+      crossAxisCount: 3,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       children: List.generate(
@@ -168,11 +155,60 @@ class DesktopGallery extends StatelessWidget {
             (index) => Container(
           margin: EdgeInsets.all(8),
           color: Colors.grey[300],
-          child: HoverWidget(
-            onHover: (_) {}, // Add an empty onHover callback
-            hoverChild: Center(
+          child: HoverImage(
+            image: Image.network(
+              imageUrls[index],
+              fit: BoxFit.cover,
+            ),
+            hoverText: imageTexts[index],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HoverImage extends StatefulWidget {
+  final Image image;
+  final String hoverText;
+
+  const HoverImage({
+    Key? key,
+    required this.image,
+    required this.hoverText,
+  }) : super(key: key);
+
+  @override
+  _HoverImageState createState() => _HoverImageState();
+}
+
+class _HoverImageState extends State<HoverImage> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          _isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _isHovered = false;
+        });
+      },
+      child: Stack(
+        fit: StackFit.expand,
+        children: [
+          widget.image,
+          _buildBlurOverlay(_isHovered),
+          Center(
+            child: AnimatedOpacity(
+              duration: Duration(milliseconds: 300),
+              opacity: _isHovered ? 1.0 : 0.0,
               child: Text(
-                imageTexts[index], // Display corresponding text for the image
+                widget.hoverText,
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -180,17 +216,21 @@ class DesktopGallery extends StatelessWidget {
                 ),
               ),
             ),
-            child: Center(
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Image.network(
-                    imageUrls[index],
-                    fit: BoxFit.cover,
-                  ),
-                ],
-              ),
-            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildBlurOverlay(bool isHovered) {
+    return AnimatedOpacity(
+      duration: Duration(milliseconds: 300),
+      opacity: isHovered ? 1.0 : 0.0,
+      child: ClipRect(
+        child: BackdropFilter(
+          filter: isHovered ? ImageFilter.blur(sigmaX: 9, sigmaY: 9) : ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+          child: Container(
+            color: Colors.transparent,
           ),
         ),
       ),
