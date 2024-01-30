@@ -38,6 +38,7 @@ class EmploymentPage extends StatelessWidget {
                           style: TextStyle(
                             fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
                             fontWeight: FontWeight.bold,
+                            fontFamily: 'assets/fonts/GT Sectra Fine Medium.ttf',
                             color: Colors.cyan,
                           ),
                         ),
