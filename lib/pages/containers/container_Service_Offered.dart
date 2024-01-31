@@ -15,19 +15,27 @@ class ServiceOfferedContainer extends StatelessWidget {
 
 class MobileServiceOfferedContainer extends StatelessWidget {
   final List<String> imageAssets = [
-    illustration2,
-    illustration3,
-    nurse,
-    careers,
-    home
+    'assets/images/catheter.jpeg',
+    'assets/images/enteral.jpg',
+    'assets/images/medication.jpg',
+    'assets/images/ostomy.jpg',
+    'assets/images/painManagement.jpg',
+    'assets/images/physical.jpg',
+    'assets/images/venipuncture.jpg',
+    'assets/images/wound.jpg',
+
   ];
 
   final List<String> imageTexts = [
-    'Text for Image 1',
-    'Text for Image 2',
-    'Text for Image 3',
-    'Text for Image 4',
-    'Text for Image 5',
+    'CATHETER CARE',
+    'ENTERAL TUBE FEEDING',
+    'MEDICATION MANAGEMENT',
+    'OSTOMY CARE',
+    'PAIN MANAGEMENT',
+    'PHYSICAL THERAPY',
+    'VENIPUNCTURE CARE',
+    'WOUND CARE',
+
   ];
 
   @override
@@ -59,19 +67,25 @@ class MobileServiceOfferedContainer extends StatelessWidget {
 
 class DesktopServiceOfferedContainer extends StatelessWidget {
   final List<String> imageUrls = [
-    illustration2,
-    illustration3,
-    nurse,
-    careers,
-    home
+    'assets/images/catheter.jpeg',
+    'assets/images/enteral.jpg',
+    'assets/images/medication.jpg',
+    'assets/images/ostomy.jpg',
+    'assets/images/painManagement.jpg',
+    'assets/images/physical.jpg',
+    'assets/images/venipuncture.jpg',
+    'assets/images/wound.jpg',
   ];
 
   final List<String> imageTexts = [
-    'Text for Image 1',
-    'Text for Image 2',
-    'Text for Image 3',
-    'Text for Image 4',
-    'Text for Image 5',
+    'CATHETER CARE',
+    'ENTERAL TUBE FEEDING',
+    'MEDICATION MANAGEMENT',
+    'OSTOMY CARE',
+    'PAIN MANAGEMENT',
+    'PHYSICAL THERAPY',
+    'VENIPUNCTURE CARE',
+    'WOUND CARE',
   ];
 
   @override
@@ -147,7 +161,7 @@ class DesktopGallery extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 3,
+      crossAxisCount: 4,
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
       children: List.generate(
@@ -210,7 +224,7 @@ class _HoverImageState extends State<HoverImage> {
               child: Text(
                 widget.hoverText,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black87,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
