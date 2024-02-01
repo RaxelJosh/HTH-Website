@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
-import 'package:xpense_flutter_web/widgets/commonContainer.dart';
 
 class Container6 extends StatefulWidget {
   final bool isTrue;
@@ -67,17 +65,17 @@ class _Container6State extends State<Container6> {
       child: Column(
         children: [
           buildCompanyLogoSet('Insurance Partnered With:', [
-            companyLogo(humana, width: 200, height: 90),
-            companyLogo(medicare, width: 200, height: 90),
-            companyLogo(wellcare, width: 200, height: 90),
+            companyLogo(chs, width: 200, height: 90),
             companyLogo(villageMedical, width: 200, height: 170),
+            companyLogo(wellcare, width: 200, height: 90),
+            companyLogo(medicare, width: 200, height: 170),
           ]),
           SizedBox(height: 2),
           buildCompanyLogoSet('', [
+            companyLogo(kelsey, width: 200, height: 200),
             companyLogo(devoted, width: 200, height: 200),
             companyLogo(genesis, width: 200, height: 40),
-            companyLogo(kelsey, width: 200, height: 35),
-            companyLogo(chs, width: 200, height: 100),
+            companyLogo(humana, width: 200, height: 200),
           ]),
         ],
       ),

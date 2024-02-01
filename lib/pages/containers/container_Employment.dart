@@ -34,7 +34,13 @@ class MobileEmploymentContainer extends StatelessWidget {
               fontSize: 16,
             ),
           ),
-          // Add more widgets for mobile view as needed
+          SizedBox(height: 20), // Add spacing between text and boxes
+          Center(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: ThreeBoxesRow(),
+            ),
+          ), // Center the row of boxes with SingleChildScrollView
         ],
       ),
     );
@@ -73,7 +79,13 @@ class DesktopEmploymentContainer extends StatelessWidget {
                     fontSize: 18,
                   ),
                 ),
-                // Add more widgets for desktop view as needed
+                SizedBox(height: 20), // Add spacing between text and boxes
+                Center(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: ThreeBoxesRow(),
+                  ),
+                ), // Center the row of boxes with SingleChildScrollView
               ],
             ),
           ),
@@ -85,4 +97,94 @@ class DesktopEmploymentContainer extends StatelessWidget {
       ),
     );
   }
+}
+
+class ThreeBoxesRow extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center, // Center the row
+      children: [
+        SizedBox(width: 20), // Add initial spacing
+        BoxWithImage(imagePath: 'assets/images/nurse_career.jpeg'),
+        SizedBox(width: 20), // Add spacing between boxes
+        BoxWithImage(imagePath: 'assets/images/therapist_career.jpg'),
+        SizedBox(width: 20), // Add spacing between boxes
+        BoxWithImage(imagePath: 'assets/images/bi_career.jpg'),
+        SizedBox(width: 20), // Add final spacing
+      ],
+    );
+  }
+}
+
+class BoxWithImage extends StatefulWidget {
+  final String imagePath;
+
+  const BoxWithImage({required this.imagePath});
+
+  @override
+  _BoxWithImageState createState() => _BoxWithImageState();
+}
+
+class _BoxWithImageState extends State<BoxWithImage> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 200),
+        width: 350,
+        height: 600,
+        transform: Matrix4.identity()..scale(_isHovered ? 1.1 : 1.0),
+        decoration: BoxDecoration(
+          border: Border.all(
+            color: _isHovered ? Colors.blue : Colors.black,
+            width: 2,
+          ),
+          image: DecorationImage(
+            image: AssetImage('assets/images/career_banner.jpg'), // Replace with your background image
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: 0,
+              left: 0,
+              right: 0,
+              child: Image.asset(
+                widget.imagePath,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                child: Text(
+                  'Caption or additional content',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+
+void main() {
+  runApp(MaterialApp(
+    home: EmploymentContainer(),
+  ));
 }
