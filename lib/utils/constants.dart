@@ -25,3 +25,4 @@ const String banner = 'assets/images/background_image.jpg';
 const String careers = 'assets/images/Careers.jpg';
 const String nurse = 'assets/images/nurse-patient.png';
 const String home = 'assets/images/Home-healthcare.jpg';
+const String chs = 'assets/images/CHS.jpg';

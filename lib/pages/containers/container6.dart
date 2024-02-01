@@ -27,8 +27,10 @@ class _Container6State extends State<Container6> {
   Widget MobileContainer6() {
     return Container(
       width: double.infinity,
-      color: widget.isTrue ? Colors.white30 : Colors.white, // Change background color based on isTrue
-      padding: EdgeInsets.symmetric(vertical: 0), // Remove vertical padding
+      color: widget.isTrue ? Colors.white30 : Colors.white,
+      // Change background color based on isTrue
+      padding: EdgeInsets.symmetric(vertical: 0),
+      // Remove vertical padding
       child: Column(
         children: [
           buildCompanyLogoSet('Insurance Partnered With:', [
@@ -49,10 +51,19 @@ class _Container6State extends State<Container6> {
     );
   }
 
+//================ Desktop ===============
+
   Widget DesktopContainer6() {
     return Container(
-      color: widget.isTrue ? Colors.blueGrey : Colors.white, // Change background color based on isTrue
-      padding: EdgeInsets.symmetric(vertical: 10),
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/insurancebanner.jpg'),
+          // Adjust the image path as per your project
+          fit: BoxFit.cover,
+        ),
+        color: widget.isTrue ? Colors.blueGrey : Colors.white,
+      ),
+      padding: EdgeInsets.symmetric(vertical: 0),
       child: Column(
         children: [
           buildCompanyLogoSet('Insurance Partnered With:', [
@@ -61,11 +72,12 @@ class _Container6State extends State<Container6> {
             companyLogo(wellcare, width: 200, height: 90),
             companyLogo(villageMedical, width: 200, height: 170),
           ]),
-          SizedBox(height: 20), // Add spacing between the two sets of logos
+          SizedBox(height: 2),
           buildCompanyLogoSet('', [
             companyLogo(devoted, width: 200, height: 200),
             companyLogo(genesis, width: 200, height: 40),
             companyLogo(kelsey, width: 200, height: 35),
+            companyLogo(chs, width: 200, height: 100),
           ]),
         ],
       ),

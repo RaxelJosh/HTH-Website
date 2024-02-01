@@ -18,10 +18,13 @@ class MobileContainer7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       color: Colors.black, // Adjust color as needed
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(height: 10), // Adjust height as needed
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Text(
@@ -31,6 +34,7 @@ class MobileContainer7 extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
           Padding(
@@ -41,8 +45,10 @@ class MobileContainer7 extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 16,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
+          SizedBox(height: 10), // Adjust height as needed
         ],
       ),
     );
@@ -53,39 +59,41 @@ class DesktopContainer7 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: double.infinity,
       color: Colors.cyanAccent, // Adjust color as needed
-      child: Row(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Text(
-                '© HTH Holy Trinity Healthcare',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+          SizedBox(height: 10), // Adjust height as needed
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text(
+              '© HTH Holy Trinity Healthcare',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: Text(
-                'Holy Trinity Healthcare\n'
-                    '11104 W.Airport BLVD. Suite 131 Stafford, TX 77477\n'
-                    'Tel: 713-333-3660\n'
-                    'Fax: 713-333-4660\n'
-                    'Email: info@hthhealthcare.com',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                ),
-                textAlign: TextAlign.right,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
+            child: Text(
+              'Holy Trinity Healthcare\n'
+                  '11104 W.Airport BLVD. Suite 131 Stafford, TX 77477\n'
+                  'Tel: 713-333-3660\n'
+                  'Fax: 713-333-4660\n'
+                  'Email: info@hthhealthcare.com',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 16,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
+          SizedBox(height: 10), // Adjust height as needed
         ],
       ),
     );
