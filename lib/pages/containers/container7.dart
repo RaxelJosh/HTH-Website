@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
-import 'package:xpense_flutter_web/utils/constants.dart';
-import 'package:xpense_flutter_web/utils/styles.dart';
 
 class Container7 extends StatelessWidget {
   @override
@@ -19,7 +16,12 @@ class MobileContainer7 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.black, // Adjust color as needed
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/mobile_background.jpg'), // Adjust path as needed
+          fit: BoxFit.cover,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -60,7 +62,12 @@ class DesktopContainer7 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.cyanAccent, // Adjust color as needed
+      decoration: BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/footerbanner.jpg'), // Adjust path as needed
+          fit: BoxFit.fitWidth,
+        ),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,

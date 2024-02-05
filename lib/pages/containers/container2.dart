@@ -1,9 +1,6 @@
-import 'package:entry/entry.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
-import 'package:xpense_flutter_web/utils/styles.dart';
 
 class Container2 extends StatefulWidget {
   const Container2({Key? key}) : super(key: key);

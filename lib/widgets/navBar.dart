@@ -4,9 +4,7 @@ import 'package:xpense_flutter_web/pages/Contact_Us.dart';
 import 'package:xpense_flutter_web/pages/Employment.dart';
 import 'package:xpense_flutter_web/pages/Service_Area.dart';
 import 'package:xpense_flutter_web/pages/Services_Offered.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
-import 'package:xpense_flutter_web/utils/styles.dart';
 
 import '../pages/About_Us.dart';
 
@@ -83,10 +81,6 @@ Widget DeskTopNavBar(BuildContext context) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ContactUsPage()));
             }),
-            // navButton('Services Offered'),
-            // navButton('Service Area'),
-            // navButton('Employment'),
-            // navButton('Contact Us')
           ],
         ),
       ],

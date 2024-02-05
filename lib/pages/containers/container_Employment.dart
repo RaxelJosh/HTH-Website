@@ -106,21 +106,40 @@ class ThreeBoxesRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center, // Center the row
       children: [
         SizedBox(width: 20), // Add initial spacing
-        BoxWithImage(imagePath: 'assets/images/nurse_career.jpeg'),
+        BoxWithImage(
+          imagePath: 'assets/images/nurse_career.jpeg',
+          caption: 'Registered Nurse',
+          additionalText: 'Calling all compassionate RNs! Join our healing squad and ignite positive change in healthcare..',
+        ),
         SizedBox(width: 20), // Add spacing between boxes
-        BoxWithImage(imagePath: 'assets/images/therapist_career.jpg'),
+        BoxWithImage(
+          imagePath: 'assets/images/therapist_career.jpg',
+          caption: 'Occupational Therapies',
+          additionalText: 'Empower lives and shape futures! Join our Occupational Therapies dream team today.',
+        ),
         SizedBox(width: 20), // Add spacing between boxes
-        BoxWithImage(imagePath: 'assets/images/bi_career.jpg'),
+        BoxWithImage(
+          imagePath: 'assets/images/bi_career.jpg',
+          caption: 'Back office and Staffs',
+          additionalText: 'Unlock your potential and thrive in our back office family! Join us and be part of something amazing.',
+        ),
         SizedBox(width: 20), // Add final spacing
       ],
     );
   }
 }
 
+
 class BoxWithImage extends StatefulWidget {
   final String imagePath;
+  final String caption;
+  final String additionalText;
 
-  const BoxWithImage({required this.imagePath});
+  const BoxWithImage({
+    required this.imagePath,
+    required this.caption,
+    required this.additionalText,
+  });
 
   @override
   _BoxWithImageState createState() => _BoxWithImageState();
@@ -162,16 +181,30 @@ class _BoxWithImageState extends State<BoxWithImage> {
             ),
             Align(
               alignment: Alignment.center,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8),
-                child: Text(
-                  'Caption or additional content',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8),
+                    child: Text(
+                      widget.caption,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(height: 10), // Add spacing between caption and additional text
+                  Text(
+                    widget.additionalText,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ],
               ),
             ),
           ],
@@ -180,6 +213,8 @@ class _BoxWithImageState extends State<BoxWithImage> {
     );
   }
 }
+
+
 
 
 

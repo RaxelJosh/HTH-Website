@@ -1,10 +1,7 @@
-import 'package:carousel_slider/carousel_options.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import '../../utils/colors.dart';
 import '../../utils/constants.dart';
 
 class Container1 extends StatefulWidget {

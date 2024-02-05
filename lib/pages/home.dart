@@ -39,7 +39,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      'Holy Trinity HealthCare',
+                      'HTH (Holy Trinity HealthCare)',
                       style: TextStyle(
                         fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
                         fontWeight: FontWeight.bold,

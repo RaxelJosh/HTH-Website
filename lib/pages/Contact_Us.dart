@@ -8,10 +8,6 @@ import 'package:xpense_flutter_web/pages/containers/container_Contact_Us.dart';
 import '../utils/constants.dart';
 import '../widgets/navBar.dart';
 import 'containers/container1.dart';
-import 'containers/container2.dart';
-import 'containers/container3.dart';
-import 'containers/container4.dart';
-import 'containers/container5.dart';
 import 'containers/container6.dart';
 
 class ContactUsPage extends StatelessWidget {
