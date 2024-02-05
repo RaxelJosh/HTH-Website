@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
 import 'package:xpense_flutter_web/utils/constants.dart';
 
 Widget CommonContainer(String s1, s2, s3, image, bool imageLeft) {

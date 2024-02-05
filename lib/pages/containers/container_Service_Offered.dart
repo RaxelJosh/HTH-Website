@@ -1,7 +1,6 @@
 import 'dart:ui'; // Import the 'ui' library for using the ImageFilter class
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/utils/constants.dart';
 
 class ServiceOfferedContainer extends StatelessWidget {
   @override

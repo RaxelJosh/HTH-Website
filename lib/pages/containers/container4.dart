@@ -22,7 +22,6 @@ class _Container4State extends State<Container4> {
   //================ MOBILE ===============
 
   Widget MobileContainer4() {
-    color: Colors.cyanAccent;
     return CommonContainerMobile(
         'Service Area',
         'HealthCare Comfort \nDelivered \nAt Your Home',
