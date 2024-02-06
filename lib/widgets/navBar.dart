@@ -1,3 +1,4 @@
+import 'package:HTH_Exp/pages/loginSignup.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -81,6 +82,12 @@ Widget DeskTopNavBar(BuildContext context) {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ContactUsPage()));
             }),
+            navButton('Nurse KT', () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => loginSignup()));
+            }),
+
+
           ],
         ),
       ],
