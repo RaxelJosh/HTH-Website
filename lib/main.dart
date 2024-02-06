@@ -1,6 +1,6 @@
+import 'package:HTH_Exp/pages/home.dart';
+import 'package:HTH_Exp/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:xpense_flutter_web/pages/home.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
 
 void main() {
   runApp(const MyApp());

@@ -1,6 +1,7 @@
 import 'package:entry/entry.dart';
 import 'package:flutter/material.dart';
-import 'package:xpense_flutter_web/utils/colors.dart';
+
+import 'colors.dart';
 
 ButtonStyle borderedButtonStyle = ButtonStyle(
     elevation: MaterialStateProperty.all(0),

@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/pages/containers/container7.dart';
-import 'package:xpense_flutter_web/pages/containers/container_Service_Area.dart';
 
 import '../utils/constants.dart';
 import '../widgets/navBar.dart';
 import 'containers/container1.dart';
 import 'containers/container4.dart';
 import 'containers/container6.dart';
+import 'containers/container7.dart';
+import 'containers/container_Service_Area.dart';
 
 class ServiceAreaPage extends StatelessWidget {
   @override

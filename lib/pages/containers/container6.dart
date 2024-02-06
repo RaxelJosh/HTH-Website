@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/utils/constants.dart';
+
+import '../../utils/constants.dart';
 
 class Container6 extends StatefulWidget {
   final bool isTrue;

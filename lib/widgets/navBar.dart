@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/pages/Contact_Us.dart';
-import 'package:xpense_flutter_web/pages/Employment.dart';
-import 'package:xpense_flutter_web/pages/Service_Area.dart';
-import 'package:xpense_flutter_web/pages/Services_Offered.dart';
-import 'package:xpense_flutter_web/utils/constants.dart';
 
 import '../pages/About_Us.dart';
+import '../pages/Contact_Us.dart';
+import '../pages/Employment.dart';
+import '../pages/Service_Area.dart';
+import '../pages/Services_Offered.dart';
+import '../utils/constants.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({Key? key}) : super(key: key);

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
-import 'package:xpense_flutter_web/pages/containers/container1.dart';
-import 'package:xpense_flutter_web/pages/containers/container2.dart';
-import 'package:xpense_flutter_web/pages/containers/container3.dart';
-import 'package:xpense_flutter_web/pages/containers/container4.dart';
-import 'package:xpense_flutter_web/pages/containers/container5.dart';
-import 'package:xpense_flutter_web/pages/containers/container7.dart';
 
-import 'package:xpense_flutter_web/utils/constants.dart';
-import 'package:xpense_flutter_web/widgets/navBar.dart';
 
+import '../utils/constants.dart';
+import '../widgets/navBar.dart';
+import 'containers/container1.dart';
+import 'containers/container2.dart';
+import 'containers/container3.dart';
+import 'containers/container4.dart';
+import 'containers/container5.dart';
 import 'containers/container6.dart';
+import 'containers/container7.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
