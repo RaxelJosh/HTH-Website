@@ -17,10 +17,10 @@ class MobileContainer7 extends StatelessWidget {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/mobile_background.jpg'), // Adjust path as needed
-          fit: BoxFit.cover,
-        ),
+        // image: DecorationImage(
+        //   image: AssetImage(''), // Adjust path as needed
+        //   fit: BoxFit.cover,
+        // ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
