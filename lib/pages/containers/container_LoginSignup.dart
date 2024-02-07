@@ -60,7 +60,7 @@ class LoginSignupContainer extends StatelessWidget {
                 // Navigate to SignUp screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => signUp()), // Assuming SignUp is the name of your screen/widget
+                  MaterialPageRoute(builder: (context) => SignUpForm()), // Assuming SignUp is the name of your screen/widget
                 );
               },
               child: Text('Sign Up'),
@@ -119,7 +119,7 @@ class LoginSignupContainer extends StatelessWidget {
                 // Navigate to SignUp screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => signUp()), // Assuming SignUp is the name of your screen/widget
+                  MaterialPageRoute(builder: (context) => SignUpForm()), // Assuming SignUp is the name of your screen/widget
                 );
               },
               child: Text('Sign Up'),

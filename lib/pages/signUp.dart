@@ -1,78 +1,114 @@
-import 'package:HTH_Exp/pages/containers/container_LoginSignup.dart';
-import 'package:HTH_Exp/pages/containers/container_Signup.dart';
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
 
-
-import '../utils/constants.dart';
-import '../widgets/navBar.dart';
-import 'containers/container6.dart';
-import 'containers/container7.dart';
-
-class signUp extends StatefulWidget {
-  const signUp({Key? key}) : super(key: key);
-
+class SignUpForm extends StatefulWidget {
   @override
-  _signUp createState() => _signUp();
+  _SignUpFormState createState() => _SignUpFormState();
 }
 
-class _signUp extends State<signUp> {
+class _SignUpFormState extends State<SignUpForm> {
+  final _formKey = GlobalKey<FormState>();
+  TextEditingController _firstNameController = TextEditingController();
+  TextEditingController _lastNameController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
-    w = MediaQuery.of(context).size.width;
-    h = MediaQuery.of(context).size.height;
     return Scaffold(
-        body: SingleChildScrollView(
-          child: Container(
-            child: Column(
-              children: [
-                NavBar(),
-                SizedBox(
-                  height: 5,
+      appBar: AppBar(
+        title: Text('Sign Up'),
+      ),
+      body: Center(
+        child: Container(
+          width: 300.0, // Adjust the width as needed
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(10.0),
                 ),
-                ResponsiveBuilder(
-                  builder: (context, sizingInformation) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
+                padding: EdgeInsets.all(20.0),
+                child: Form(
+                  key: _formKey,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      _buildInputField('First Name', _firstNameController),
+                      SizedBox(height: 20.0),
+                      _buildInputField('Last Name', _lastNameController),
+                      SizedBox(height: 20.0),
+                      _buildInputField('Password', _passwordController, isPassword: true),
+                      SizedBox(height: 20.0),
+                      _buildInputField('Confirm Password', _confirmPasswordController, isPassword: true),
+                      SizedBox(height: 20.0),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          padding: EdgeInsets.symmetric(vertical: 16.0),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(8.0),
+                          ),
+                        ),
+                        onPressed: () {
+                          if (_formKey.currentState != null &&
+                              _formKey.currentState!.validate()) {
+                            // Perform sign-up logic here
+                            String firstName = _firstNameController.text;
+                            String lastName = _lastNameController.text;
+                            String password = _passwordController.text;
+                            String confirmPassword = _confirmPasswordController.text;
+                            // Example: print the input values
+                            print('First Name: $firstName');
+                            print('Last Name: $lastName');
+                            print('Password: $password');
+                            print('Confirm Password: $confirmPassword');
+                          }
+                        },
+                        child: Text(
                           'Sign Up',
-                          style: TextStyle(
-                            fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'assets/fonts/GT Sectra Fine Medium.ttf',
-                            color: Colors.cyan,
-                          ),
+                          style: TextStyle(fontSize: 16.0),
                         ),
-                      ],
-                    );
-                  },
+                      ),
+                    ],
+                  ),
                 ),
-                // ResponsiveBuilder for 'Meeting The Needs Of Todays Patient At Home' text
-                ResponsiveBuilder(
-                  builder: (context, sizingInformation) {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          'Meeting The Needs Of Todays Patient At Home',
-                          style: TextStyle(
-                            fontSize: sizingInformation.isMobile ? w! / 60 : w! / 40,
-                            fontWeight: FontWeight.w100,
-                            color: Colors.cyan,
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-                SignupForm(),
-                Container6(isTrue: false,),
-                Container7(),
-                // MainContent()
-              ],
-            ),
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
+  }
+
+  Widget _buildInputField(String labelText, TextEditingController controller, {bool isPassword = false}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Text(
+          labelText,
+          style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 8.0),
+        TextFormField(
+          controller: controller,
+          obscureText: isPassword,
+          decoration: InputDecoration(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 16.0),
+          ),
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please enter $labelText';
+            }
+            return null;
+          },
+        ),
+      ],
+    );
   }
 }
