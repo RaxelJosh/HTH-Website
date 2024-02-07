@@ -1,4 +1,5 @@
 import 'package:HTH_Exp/pages/containers/container_LoginSignup.dart';
+import 'package:HTH_Exp/pages/containers/container_Signup.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -8,14 +9,14 @@ import '../widgets/navBar.dart';
 import 'containers/container6.dart';
 import 'containers/container7.dart';
 
-class loginSignup extends StatefulWidget {
-  const loginSignup({Key? key}) : super(key: key);
+class signUp extends StatefulWidget {
+  const signUp({Key? key}) : super(key: key);
 
   @override
-  _loginSignup createState() => _loginSignup();
+  _signUp createState() => _signUp();
 }
 
-class _loginSignup extends State<loginSignup> {
+class _signUp extends State<signUp> {
   @override
   Widget build(BuildContext context) {
     w = MediaQuery.of(context).size.width;
@@ -35,7 +36,7 @@ class _loginSignup extends State<loginSignup> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         Text(
-                          'Log in',
+                          'Sign Up',
                           style: TextStyle(
                             fontSize: sizingInformation.isMobile ? w! / 15 : w! / 20,
                             fontWeight: FontWeight.bold,
@@ -65,7 +66,7 @@ class _loginSignup extends State<loginSignup> {
                     );
                   },
                 ),
-                LoginSignupContainer(),
+                SignupForm(),
                 Container6(isTrue: false,),
                 Container7(),
                 // MainContent()

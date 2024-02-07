@@ -1,5 +1,5 @@
+import 'package:HTH_Exp/pages/signUp.dart';
 import 'package:flutter/material.dart';
-
 class LoginSignupContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,16 +7,16 @@ class LoginSignupContainer extends StatelessWidget {
       builder: (context, constraints) {
         if (constraints.maxWidth > 600) {
           // For desktop view
-          return _buildDesktopContainer();
+          return _buildDesktopContainer(context); // Pass context
         } else {
           // For mobile view
-          return _buildMobileContainer();
+          return _buildMobileContainer(context); // Pass context
         }
       },
     );
   }
 
-  Widget _buildDesktopContainer() {
+  Widget _buildDesktopContainer(BuildContext context) { // Accept context as a parameter
     return Center(
       child: Container(
         padding: EdgeInsets.all(20.0),
@@ -54,10 +54,14 @@ class LoginSignupContainer extends StatelessWidget {
                 minimumSize: Size(150, 40), // Adjust button size
               ),
             ),
-            SizedBox(height: 10.0),
+            SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                // Signup logic
+                // Navigate to SignUp screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => signUp()), // Assuming SignUp is the name of your screen/widget
+                );
               },
               child: Text('Sign Up'),
               style: ElevatedButton.styleFrom(
@@ -72,7 +76,7 @@ class LoginSignupContainer extends StatelessWidget {
     );
   }
 
-  Widget _buildMobileContainer() {
+  Widget _buildMobileContainer(BuildContext context) { // Accept context as a parameter
     return Center(
       child: Container(
         padding: EdgeInsets.all(20.0),
@@ -109,10 +113,14 @@ class LoginSignupContainer extends StatelessWidget {
                 minimumSize: Size(150, 40), // Adjust button size
               ),
             ),
-            SizedBox(height: 10.0),
+            SizedBox(height: 20.0),
             ElevatedButton(
               onPressed: () {
-                // Signup logic
+                // Navigate to SignUp screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => signUp()), // Assuming SignUp is the name of your screen/widget
+                );
               },
               child: Text('Sign Up'),
               style: ElevatedButton.styleFrom(
