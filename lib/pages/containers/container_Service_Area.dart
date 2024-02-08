@@ -7,13 +7,13 @@ class ServiceAreaContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout(
-      mobile: MobileAboutUsContainer(),
-      desktop: DesktopAboutUsContainer(),
+      mobile: MobileServiceAreaContainer(),
+      desktop: DesktopServiceAreaContainer(),
     );
   }
 }
 
-class MobileAboutUsContainer extends StatelessWidget {
+class MobileServiceAreaContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -60,7 +60,7 @@ class MobileAboutUsContainer extends StatelessWidget {
   }
 }
 
-class DesktopAboutUsContainer extends StatelessWidget {
+class DesktopServiceAreaContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
