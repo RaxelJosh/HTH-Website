@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -9,8 +10,11 @@ class _SignUpFormState extends State<SignUpForm> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _firstNameController = TextEditingController();
   TextEditingController _lastNameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmPasswordController = TextEditingController();
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +44,11 @@ class _SignUpFormState extends State<SignUpForm> {
                       SizedBox(height: 20.0),
                       _buildInputField('Last Name', _lastNameController),
                       SizedBox(height: 20.0),
-                      _buildInputField('Password', _passwordController, isPassword: true),
+                      _buildInputField('Email', _emailController, validator: _validateEmail),
                       SizedBox(height: 20.0),
-                      _buildInputField('Confirm Password', _confirmPasswordController, isPassword: true),
+                      _buildInputField('Password', _passwordController, isPassword: true, validator: _validatePassword),
+                      SizedBox(height: 20.0),
+                      _buildInputField('Confirm Password', _confirmPasswordController, isPassword: true, validator: _validateConfirmPassword),
                       SizedBox(height: 20.0),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -52,19 +58,31 @@ class _SignUpFormState extends State<SignUpForm> {
                             borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                        onPressed: () {
-                          if (_formKey.currentState != null &&
-                              _formKey.currentState!.validate()) {
+                        onPressed: () async {
+                          if (_formKey.currentState != null && _formKey.currentState!.validate()) {
                             // Perform sign-up logic here
-                            String firstName = _firstNameController.text;
-                            String lastName = _lastNameController.text;
-                            String password = _passwordController.text;
-                            String confirmPassword = _confirmPasswordController.text;
-                            // Example: print the input values
-                            print('First Name: $firstName');
-                            print('Last Name: $lastName');
-                            print('Password: $password');
-                            print('Confirm Password: $confirmPassword');
+                            String email = _emailController.text.trim();
+                            String password = _passwordController.text.trim();
+
+                            try {
+                              UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
+                                email: email,
+                                password: password,
+                              );
+                              // Sign up successful
+                              print('Signed up user: ${userCredential.user!.uid}');
+                              _showSuccessDialog(context);
+                            } on FirebaseAuthException catch (e) {
+                              // Sign up failed
+                              print('Failed to sign up: $e');
+                              if (e.code == 'email-already-in-use') {
+                                _showErrorDialog("Sign Up Failed", "The email address is already in use.");
+                              } else {
+                                _showErrorDialog("Sign Up Failed", e.message ?? 'An error occurred');
+                              }
+                            } catch (e) {
+                              _showErrorDialog("Sign Up Failed", e.toString());
+                            }
                           }
                         },
                         child: Text(
@@ -83,7 +101,87 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 
-  Widget _buildInputField(String labelText, TextEditingController controller, {bool isPassword = false}) {
+  void _showSuccessDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Success'),
+          content: Text('User creation successful.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop(); // Navigate back to loginSignup.dart
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+
+  void _showErrorDialog(String title, String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(title),
+          content: Text(message),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  String? _validateEmail(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your email';
+    }
+    // You can add more advanced email validation if needed
+    // For a basic check, you can use a regular expression or a package like email_validator
+    // For example:
+    // if (!EmailValidator.validate(value)) {
+    //   return 'Please enter a valid email';
+    // }
+    return null;
+  }
+
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please enter your password';
+    }
+
+    // Define a regular expression pattern for password complexity
+    final RegExp passwordRegex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$');
+
+    if (!passwordRegex.hasMatch(value)) {
+      return 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character';
+    }
+
+    return null;
+  }
+
+  String? _validateConfirmPassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Please confirm your password';
+    }
+    if (value != _passwordController.text) {
+      return 'Passwords do not match';
+    }
+    return null;
+  }
+
+  Widget _buildInputField(String labelText, TextEditingController controller, {bool isPassword = false, String? Function(String?)? validator}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -101,12 +199,7 @@ class _SignUpFormState extends State<SignUpForm> {
             ),
             contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 16.0),
           ),
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please enter $labelText';
-            }
-            return null;
-          },
+          validator: validator,
         ),
       ],
     );

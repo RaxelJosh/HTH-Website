@@ -1,4 +1,3 @@
-import 'package:HTH_Exp/pages/containers/container1.dart';
 import 'package:HTH_Exp/pages/containers/container_LoginSignup.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -66,7 +65,6 @@ class _loginSignup extends State<loginSignup> {
                     );
                   },
                 ),
-                Container1(),
                 LoginSignupContainer(),
                 Container6(isTrue: false,),
                 Container7(),
