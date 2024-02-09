@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crypto/crypto.dart'; // Import crypto package
 
 class SignUpForm extends StatefulWidget {
   @override
@@ -15,6 +19,7 @@ class _SignUpFormState extends State<SignUpForm> {
   TextEditingController _confirmPasswordController = TextEditingController();
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -44,11 +49,17 @@ class _SignUpFormState extends State<SignUpForm> {
                       SizedBox(height: 20.0),
                       _buildInputField('Last Name', _lastNameController),
                       SizedBox(height: 20.0),
-                      _buildInputField('Email', _emailController, validator: _validateEmail),
+                      _buildInputField('Email', _emailController,
+                          validator: _validateEmail),
                       SizedBox(height: 20.0),
-                      _buildInputField('Password', _passwordController, isPassword: true, validator: _validatePassword),
+                      _buildInputField('Password', _passwordController,
+                          isPassword: true,
+                          validator: _validatePassword),
                       SizedBox(height: 20.0),
-                      _buildInputField('Confirm Password', _confirmPasswordController, isPassword: true, validator: _validateConfirmPassword),
+                      _buildInputField('Confirm Password',
+                          _confirmPasswordController,
+                          isPassword: true,
+                          validator: _validateConfirmPassword),
                       SizedBox(height: 20.0),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -59,16 +70,46 @@ class _SignUpFormState extends State<SignUpForm> {
                           ),
                         ),
                         onPressed: () async {
-                          if (_formKey.currentState != null && _formKey.currentState!.validate()) {
+                          if (_formKey.currentState != null &&
+                              _formKey.currentState!.validate()) {
                             // Perform sign-up logic here
                             String email = _emailController.text.trim();
                             String password = _passwordController.text.trim();
+                            String firstName = _firstNameController.text.trim();
+                            String lastName = _lastNameController.text.trim();
 
                             try {
+                              // Check if email already exists
+                              var querySnapshot = await _firestore.collection('users').where('email', isEqualTo: email).get();
+                              if(querySnapshot.docs.isNotEmpty) {
+                                _showErrorDialog("Sign Up Failed", "The email address is already in use.");
+                                return;
+                              }
+
+                              // Hash the password using sha256
+                              String hashedPassword = sha256.convert(utf8.encode(password)).toString();
+
+                              // Check if hashed password already exists
+                              querySnapshot = await _firestore.collection('users').where('password', isEqualTo: hashedPassword).get();
+                              if(querySnapshot.docs.isNotEmpty) {
+                                _showErrorDialog("Sign Up Failed", "The password is already in use.");
+                                return;
+                              }
+
+                              // Create user account
                               UserCredential userCredential = await _auth.createUserWithEmailAndPassword(
                                 email: email,
                                 password: password,
                               );
+
+                              // Store additional user information in Firestore
+                              await _firestore.collection('users').doc(userCredential.user!.uid).set({
+                                'firstName': firstName,
+                                'lastName': lastName,
+                                'email': email,
+                                'password': hashedPassword, // Store the hashed password
+                              });
+
                               // Sign up successful
                               print('Signed up user: ${userCredential.user!.uid}');
                               _showSuccessDialog(context);
@@ -122,7 +163,6 @@ class _SignUpFormState extends State<SignUpForm> {
     );
   }
 
-
   void _showErrorDialog(String title, String message) {
     showDialog(
       context: context,
@@ -162,7 +202,8 @@ class _SignUpFormState extends State<SignUpForm> {
     }
 
     // Define a regular expression pattern for password complexity
-    final RegExp passwordRegex = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$');
+    final RegExp passwordRegex = RegExp(
+        r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$');
 
     if (!passwordRegex.hasMatch(value)) {
       return 'Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character';
@@ -181,7 +222,8 @@ class _SignUpFormState extends State<SignUpForm> {
     return null;
   }
 
-  Widget _buildInputField(String labelText, TextEditingController controller, {bool isPassword = false, String? Function(String?)? validator}) {
+  Widget _buildInputField(String labelText, TextEditingController controller,
+      {bool isPassword = false, String? Function(String?)? validator}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -197,7 +239,8 @@ class _SignUpFormState extends State<SignUpForm> {
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8.0),
             ),
-            contentPadding: EdgeInsets.symmetric(vertical: 14.0, horizontal: 16.0),
+            contentPadding:
+            EdgeInsets.symmetric(vertical: 14.0, horizontal: 16.0),
           ),
           validator: validator,
         ),
